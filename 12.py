@@ -1,27 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[3]:
+# In[35]:
 
 
-a,b,c,d = 1,2,3,4
-a
+import numpy as np
+import astropy as at
 
-
-# In[5]:
-
-
-b
-
-
-# In[7]:
-
-
-c
-
-
-# In[8]:
-
-
-d
+a = np.array([[3,2,3],[2,2,2]])
+b = np.array([2,2,2])
+c = a*b
+print(c)
 
