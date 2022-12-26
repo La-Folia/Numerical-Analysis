@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  23 DEC 2022 20:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  26 DEC 2022 09:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -289,35 +289,36 @@ e
 [1
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<13.pdf, id=9, 462.52798pt x 346.89601pt>
+File: 13.pdf Graphic file (type pdf)
+<use 13.pdf>
+Package pdftex.def Info: 13.pdf  used on input line 40.
+(pdftex.def)             Requested size: 234.87749pt x 176.15768pt.
 
-LaTeX Warning: File `13.pdf' not found on input line 40.
+[2 <./13.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 46--47
 
+ []
 
-! Package pdftex.def Error: File `13.pdf' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.40 ...cludegraphics[width=0.5\textwidth]{13.pdf}
-                                                  
-? e
- 
+[3] (./basic_latex_sample.aux) ) 
 Here is how much of TeX's memory you used:
- 3213 strings out of 476093
- 53933 string characters out of 5791584
+ 3177 strings out of 476093
+ 53365 string characters out of 5791584
  1849793 words of memory out of 5000000
- 23536 multiletter control sequences out of 15000+600000
+ 23512 multiletter control sequences out of 15000+600000
  517741 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,6n,67p,215b,196s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
-usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
-r/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on basic_latex_sample.pdf (1 page, 31388 bytes).
+ 60i,6n,67p,215b,231s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2022/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr17.pfb>
+Output written on basic_latex_sample.pdf (3 pages, 67634 bytes).
 PDF statistics:
- 23 PDF objects out of 1000 (max. 8388607)
- 13 compressed objects within 1 object stream
+ 50 PDF objects out of 1000 (max. 8388607)
+ 28 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
