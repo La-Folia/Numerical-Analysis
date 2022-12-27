@@ -698,14 +698,51 @@ np.random.randint(-9, 10, (5, 2))
 
 # ![%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202022-12-27%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2011.14.28.png](attachment:%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202022-12-27%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2011.14.28.png)
 
-# In[157]:
+# In[219]:
 
 
 N = 1000
 x = np.linspace(0, 2 * np.pi, N)
 y = x * np.sin(x) + np.cos(4 * x)
 
-i_minmax = [f(y) for f in (np.argmin, np.argmax)]
+i_minmax = [a(y) for a in (np.argmin, np.argmax)] # 부분에서 a여도 되고 f여도 됨.
+x_minmax = x[i_minmax]
+y_minmax = y[i_minmax]
+
+print(f'Absolute maximum value is y = {y_minmax[1]} at x = {x_minmax[1]}')
+print(f'Absolute minimum value is y = {y_minmax[0]} at x = {x_minmax[0]}')
+
+
+# In[221]:
+
+
+N = 1000
+x = np.linspace(0, 2 * np.pi, N)
+y = x * np.sin(x) + np.cos(4 * x)
+
+i_minmax = [b(y) for b in (np.argmin, np.argmax)]# 부분에서 a여도 되고 f여도 됨.
+x_minmax = x[i_minmax]
+y_minmax = y[i_minmax]
+
+print(f'Absolute maximum value is y = {y_minmax[1]} at x = {x_minmax[1]}')
+print(f'Absolute minimum value is y = {y_minmax[0]} at x = {x_minmax[0]}')
+
+
+# In[223]:
+
+
+print(x_minmax)
+print(y_minmax)
+
+
+# In[ ]:
+
+
+N = 1000
+x = np.linspace(0, 2 * np.pi, N)
+y = x * np.sin(x) + np.cos(4 * x)
+
+i_minmax = [f(y) for f in (np.argmin, np.argmax)]# 부분에서 a여도 되고 f여도 됨.
 x_minmax = x[i_minmax]
 y_minmax = y[i_minmax]
 
@@ -730,7 +767,7 @@ b = map(np.sin, 2 * np.pi * x)
 
 # ![%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202022-12-27%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2011.58.37.png](attachment:%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202022-12-27%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2011.58.37.png)
 
-# In[200]:
+# In[252]:
 
 
 def midpoint_rule(f, xs):
@@ -742,11 +779,20 @@ def midpoint_rule(f, xs):
     return np.sum(f(xi) * dx)
 
 
-# In[202]:
+# In[256]:
 
 
 midpoint_rule(lambda x: np.exp(-(x * x)), 
              np.linspace(0, 100, 100000))
+
+
+# In[257]:
+
+
+xs = np.linspace(0, 100, 10)
+print((xs[:-1] + xs[1:]) / 2)
+print(xs[:-1])
+print(xs[1:])
 
 
 # # 무한 제품
@@ -759,7 +805,8 @@ midpoint_rule(lambda x: np.exp(-(x * x)),
 def cos_product(x, N):
     n = np.arange(N) + 1
     second_term = ((2 * x) / (np.pi * (2 * n - 1))) ** 2
-    return np.prod(1 - second_term)
+    return np.prod(1 - second_term) #np.prod는 배열안의 모든 요소를 곱하는 것.
+#즉, 0~N까지에서 1이 추가되어 n=1부터 무한대(여기서는 10000, 1000000 까지)까지 곱하는 것을 무한 곱이라고 한다.
 
 
 # In[207]:
@@ -774,8 +821,14 @@ cos_product(0, 10)
 cos_product(np.pi, 10000)
 
 
-# In[211]:
+# In[212]:
 
 
 (cos_product(np.pi / 4, 10000000), 1 / 2 ** 0.5)
+
+
+# In[ ]:
+
+
+
 
