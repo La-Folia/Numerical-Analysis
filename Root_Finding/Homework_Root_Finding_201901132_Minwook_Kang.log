@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  8 JAN 2023 18:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  9 JAN 2023 00:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -471,63 +471,198 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 94.
- [2]
-Underfull \hbox (badness 10000) in paragraph at lines 110--111
+(Font)              <10.95> on input line 93.
 
+(./CubeRoot_Homework1.py
+consecutive:
+LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 1
+0.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omslmr.fd
+File: omslmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <9> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 10.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+8.
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [2])
+(./Golden_Ratio_Homework1.py
+consecutive:
+) [3] (./Supergolden_Ratio_Homework1.py
+consecutive:
+)
+LaTeX Font Info:    Trying to load font information for OML+lmr on input line 1
+38.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omllmr.fd
+File: omllmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OML/lmr/m/n' in size <9> not available
+(Font)              Font shape `OML/lmm/m/it' tried instead on input line 138.
+ [4]
+<Bessel_Functions.pdf, id=67, 462.52798pt x 346.89601pt>
+File: Bessel_Functions.pdf Graphic file (type pdf)
+<use Bessel_Functions.pdf>
+Package pdftex.def Info: Bessel_Functions.pdf  used on input line 146.
+(pdftex.def)             Requested size: 234.87749pt x 176.15768pt.
+
+(./Zeros_of_Bessel_Fuctions_Homework1.py
+consecutive:
+) [5
+
+ <./Bessel_Functions.pdf>]
+<Zeros_of_Bessel_Fuctions_Homework1.pdf, id=97, 462.52798pt x 346.89601pt>
+File: Zeros_of_Bessel_Fuctions_Homework1.pdf Graphic file (type pdf)
+<use Zeros_of_Bessel_Fuctions_Homework1.pdf>
+Package pdftex.def Info: Zeros_of_Bessel_Fuctions_Homework1.pdf  used on input 
+line 162.
+(pdftex.def)             Requested size: 234.87749pt x 176.15768pt.
+ [6 <./Zeros_of_Bessel_Fuctions_Homework1.pdf>]
+[7
+
+] [8] [9] [10] [11] [12]
+<Bisection_method.png, id=157, 313.17pt x 258.9675pt>
+File: Bisection_method.png Graphic file (type png)
+<use Bisection_method.png>
+Package pdftex.def Info: Bisection_method.png  used on input line 485.
+(pdftex.def)             Requested size: 234.87749pt x 194.23303pt.
+ [13]
+<bisection_sol_Method_approximation.pdf, id=162, 794.97pt x 289.08pt>
+File: bisection_sol_Method_approximation.pdf Graphic file (type pdf)
+<use bisection_sol_Method_approximation.pdf>
+Package pdftex.def Info: bisection_sol_Method_approximation.pdf  used on input 
+line 502.
+(pdftex.def)             Requested size: 469.75499pt x 170.82478pt.
+ [14 <./Bisection_method.png>]
+<f_2(x).pdf, id=167, 462.52798pt x 346.89601pt>
+File: f_2(x).pdf Graphic file (type pdf)
+<use f_2(x).pdf>
+Package pdftex.def Info: f_2(x).pdf  used on input line 511.
+(pdftex.def)             Requested size: 328.82706pt x 246.63135pt.
+<Newtown_Method_strange.pdf, id=168, 462.52798pt x 346.89601pt>
+File: Newtown_Method_strange.pdf Graphic file (type pdf)
+<use Newtown_Method_strange.pdf>
+Package pdftex.def Info: Newtown_Method_strange.pdf  used on input line 533.
+(pdftex.def)             Requested size: 328.82706pt x 246.63135pt.
+ [15 <./bisection_sol_Method_approximation.pdf> <./f_2(x).pdf>] [16 <./Newtown_
+Method_strange.pdf>] [17]
+<Bisectoin_Question2.pdf, id=275, 462.52798pt x 346.89601pt>
+File: Bisectoin_Question2.pdf Graphic file (type pdf)
+<use Bisectoin_Question2.pdf>
+Package pdftex.def Info: Bisectoin_Question2.pdf  used on input line 584.
+(pdftex.def)             Requested size: 281.85585pt x 211.39981pt.
+<Bisection_method1.pdf, id=276, 462.52798pt x 346.89601pt>
+File: Bisection_method1.pdf Graphic file (type pdf)
+<use Bisection_method1.pdf>
+Package pdftex.def Info: Bisection_method1.pdf  used on input line 599.
+(pdftex.def)             Requested size: 281.85585pt x 211.39981pt.
+ [18
+
+ <./Bisectoin_Question2.pdf>] [19 <./Bisection_method1.pdf>]
+<Newton_Method3.pdf, id=323, 462.52798pt x 346.89601pt>
+File: Newton_Method3.pdf Graphic file (type pdf)
+<use Newton_Method3.pdf>
+Package pdftex.def Info: Newton_Method3.pdf  used on input line 653.
+(pdftex.def)             Requested size: 258.36667pt x 193.78404pt.
+
+Overfull \hbox (14.85225pt too wide) in paragraph at lines 657--658
+\OT1/lmr/m/n/10.95 13.305409517702934 \LUC/nanummj/m/n/10.95/c7 t\LUC/nanummj/m
+/n/10.95/b8 ^^G\LUC/nanummj/m/n/10.95/ac Œ \LUC/nanummj/m/n/10.95/c6 ^^H\LUC/na
+nummj/m/n/10.95/c0 Á\LUC/nanummj/m/n/10.95/d5 \\LUC/nanummj/m/n/10.95/b3 ^^@\LU
+C/nanummj/m/n/10.95/b8 \ \LUC/nanummj/m/n/10.95/ac ^^R\LUC/nanummj/m/n/10.95/c7
+ D \LUC/nanummj/m/n/10.95/cd ”\LUC/nanummj/m/n/10.95/c8 ^^U\LUC/nanummj/m/n/10.
+95/d5 X\LUC/nanummj/m/n/10.95/ac Œ \LUC/nanummj/m/n/10.95/b4 ^^\\LUC/nanummj/m/
+n/10.95/b2 ä\OT1/lmr/m/n/10.95 . \LUC/nanummj/m/n/10.95/c7 t\LUC/nanummj/m/n/10
+.95/b5 L \LUC/nanummj/m/n/10.95/cd ^^H\LUC/nanummj/m/n/10.95/ae 0 \LUC/nanummj/
+m/n/10.95/ac ^^R\LUC/nanummj/m/n/10.95/c7 D \LUC/nanummj/m/n/10.95/d3 ^^L\LUC/n
+anummj/m/n/10.95/c5 E\LUC/nanummj/m/n/10.95/d5 X\LUC/nanummj/m/n/10.95/c5 ì \OT
+1/lmr/m/n/10.95 5.670689228522683
  []
 
-[3] (./Homework_Root_Finding_201901132_Minwook_Kang.aux) ) 
+[20
+
+] [21 <./Newton_Method3.pdf>]
+(./Homework_Root_Finding_201901132_Minwook_Kang.aux) ) 
 Here is how much of TeX's memory you used:
- 7105 strings out of 476093
- 115664 string characters out of 5791584
- 1878793 words of memory out of 5000000
- 27371 multiletter control sequences out of 15000+600000
- 546939 words of font info for 77 fonts, out of 8000000 for 9000
+ 7388 strings out of 476093
+ 121538 string characters out of 5791584
+ 2227793 words of memory out of 5000000
+ 27600 multiletter control sequences out of 15000+600000
+ 556656 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,6n,79p,347b,1301s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2
-022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2022/texmf-
-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/local/texlive/2022/texmf-dist/fonts/typ
-e1/public/lm/lmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/
-lm/lmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.p
-fb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/lo
-cal/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive
-/2022/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2022/texmf-
-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2022/texmf-dist/fonts/t
-ype1/public/nanumtype1/nanummjbb9.pfb></usr/local/texlive/2022/texmf-dist/fonts
-/type1/public/nanumtype1/nanummjbc6.pfb></usr/local/texlive/2022/texmf-dist/fon
-ts/type1/public/nanumtype1/nanummjbc7.pfb></usr/local/texlive/2022/texmf-dist/f
-onts/type1/public/nanumtype1/nanummjbc8.pfb></usr/local/texlive/2022/texmf-dist
-/fonts/type1/public/nanumtype1/nanummjbd4.pfb></usr/local/texlive/2022/texmf-di
-st/fonts/type1/public/nanumtype1/nanummjbd5.pfb></usr/local/texlive/2022/texmf-
-dist/fonts/type1/public/nanumtype1/nanummjmac.pfb></usr/local/texlive/2022/texm
-f-dist/fonts/type1/public/nanumtype1/nanummjmad.pfb></usr/local/texlive/2022/te
-xmf-dist/fonts/type1/public/nanumtype1/nanummjmb2.pfb></usr/local/texlive/2022/
-texmf-dist/fonts/type1/public/nanumtype1/nanummjmb3.pfb></usr/local/texlive/202
-2/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb4.pfb></usr/local/texlive/2
-022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb5.pfb></usr/local/texlive
-/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb7.pfb></usr/local/texli
-ve/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb8.pfb></usr/local/tex
-live/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb9.pfb></usr/local/t
-exlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmba.pfb></usr/local
-/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbc.pfb></usr/loc
-al/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbd.pfb></usr/l
-ocal/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc0.pfb></usr
-/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc2.pfb></u
-sr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc5.pfb><
-/usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc6.pfb
-></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc7.p
-fb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc8
+ 69i,8n,79p,841b,1751s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/local/texlive/2022/
+texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2022/texmf-dist
+/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc
+/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-
+mathsy.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</u
+sr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/t
+exlive/2022/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/202
+2/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2022/texmf-di
+st/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/ty
+pe1/public/lm/lmmi9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/
+lm/lmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr12.pf
+b></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/loc
+al/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2
+022/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2022/texmf-di
+st/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2022/texmf-dist/fonts/typ
+e1/public/lm/lmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/
+lm/lmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy9.pf
+b></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb9.
+pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc
+6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummj
+bc7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanum
+mjbc8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nan
+ummjbd4.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/n
+anummjbd5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1
+/nanummjmac.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtyp
+e1/nanummjmad.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumt
+ype1/nanummjmae.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanu
+mtype1/nanummjmb0.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/na
+numtype1/nanummjmb1.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/
+nanumtype1/nanummjmb2.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/publi
+c/nanumtype1/nanummjmb3.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/pub
+lic/nanumtype1/nanummjmb4.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/p
+ublic/nanumtype1/nanummjmb5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1
+/public/nanumtype1/nanummjmb6.pfb></usr/local/texlive/2022/texmf-dist/fonts/typ
+e1/public/nanumtype1/nanummjmb7.pfb></usr/local/texlive/2022/texmf-dist/fonts/t
+ype1/public/nanumtype1/nanummjmb8.pfb></usr/local/texlive/2022/texmf-dist/fonts
+/type1/public/nanumtype1/nanummjmb9.pfb></usr/local/texlive/2022/texmf-dist/fon
+ts/type1/public/nanumtype1/nanummjmba.pfb></usr/local/texlive/2022/texmf-dist/f
+onts/type1/public/nanumtype1/nanummjmbb.pfb></usr/local/texlive/2022/texmf-dist
+/fonts/type1/public/nanumtype1/nanummjmbc.pfb></usr/local/texlive/2022/texmf-di
+st/fonts/type1/public/nanumtype1/nanummjmbd.pfb></usr/local/texlive/2022/texmf-
+dist/fonts/type1/public/nanumtype1/nanummjmbe.pfb></usr/local/texlive/2022/texm
+f-dist/fonts/type1/public/nanumtype1/nanummjmbf.pfb></usr/local/texlive/2022/te
+xmf-dist/fonts/type1/public/nanumtype1/nanummjmc0.pfb></usr/local/texlive/2022/
+texmf-dist/fonts/type1/public/nanumtype1/nanummjmc1.pfb></usr/local/texlive/202
+2/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc2.pfb></usr/local/texlive/2
+022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc3.pfb></usr/local/texlive
+/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc4.pfb></usr/local/texli
+ve/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc5.pfb></usr/local/tex
+live/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc6.pfb></usr/local/t
+exlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc7.pfb></usr/local
+/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc8.pfb></usr/loc
+al/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc9.pfb></usr/l
+ocal/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcc.pfb></usr
+/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcd.pfb></u
+sr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmce.pfb><
+/usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcf.pfb
+></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd0.p
+fb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd1
 .pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjm
-c9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanumm
-jmd1.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanu
-mmjmd5.pfb>
-Output written on Homework_Root_Finding_201901132_Minwook_Kang.pdf (3 pages, 12
-38616 bytes).
+d2.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanumm
+jmd3.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanu
+mmjmd4.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/na
+nummjmd5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/
+nanummjmd6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype
+1/nanummjmd7.pfb>
+Output written on Homework_Root_Finding_201901132_Minwook_Kang.pdf (21 pages, 2
+560318 bytes).
 PDF statistics:
- 187 PDF objects out of 1000 (max. 8388607)
- 112 compressed objects within 2 object streams
+ 597 PDF objects out of 1000 (max. 8388607)
+ 306 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
