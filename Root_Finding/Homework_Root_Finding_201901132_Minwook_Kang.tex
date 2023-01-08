@@ -1,5 +1,8 @@
 \documentclass[11pt]{article}
 
+
+\usepackage{caption}
+
 \usepackage{kotex}
 \usepackage{sectsty}
 \usepackage{graphicx}
@@ -222,7 +225,7 @@ def bisection_while(f, xinit, predicate):
 \end{lstlisting}
 
 \noindent
-알려진 코드에서 $f_1$, $f_2$, $f_3$ 각각에 해당하는 $x$에 대한 함수로 나타내고, 이때 주어진 조건에 맞게 parameter을 정할 것이다. 우선 첫번째, Bisection Method에서는 interval 을 $(-2, 1)$f로 두고, 절대 오차로부터 $10^{-6}$ 정도의 차이가 날 수 있도록 조정하기 위하여, lambda 함수의 절댓값 오차를 수정한다. 즉, 원하는 값을 수정하여 값을 추산하고 우리가 원하는 iteration 값과 approx solution 값을 추산하면 다음과 같다.
+알려진 코드에서 $f_1$, $f_2$, $f_3$ 각각에 해당하는 $x$에 대한 함수로 나타내고, 이때 주어진 조건에 맞게 parameter을 정할 것이다. 우선 첫번째, Bisection Method에서는 interval 을 $(-2, 1)$ 로 두고, 절대 오차로부터 $10^{-6}$ 정도의 차이가 날 수 있도록 조정하기 위하여, lambda 함수의 절댓값 오차를 수정한다. 즉, 원하는 값을 수정하여 값을 추산하고 우리가 원하는 iteration 값과 approx solution 값을 추산하면 다음과 같다.
 
 \begin{lstlisting}[language=Python]
 f_1_approx_bisection = bisection_while(lambda x: np.sin(x) - x - 1, (-2,1), 
@@ -594,12 +597,41 @@ BIsection Method의 코드중
 \end{lstlisting}
 에 의하여 Bisection Method fails 가 출력된다. 즉, $f(a_n) * f(b_n) \geq 0$ 이 성립되었다는 것인데, question 3에서 주어진 범위에서 함수의 값을 보면, $ f(a_n) * f(b_n) \geq 0$이 성립되었다는 것을 볼 수 있고, 따라서 우리는 Bisection Method를 이용할 수 없는 함수인 것을 볼 수 있다. $f_1(x)$ 을 그려보면 Figure 8 과 같다. 이 경우에 검은 색 점은, Newton's Method를 이용하여 해를 구한 것이다. 이는 -2에서 1까지의 범위사이의 $ f(a_n) * f(b_n) \geq 0$이 성립하지 않기 때문에 위에서 $f_1(x)$ 해를 구했듯, Bisection Method를 이용할 수 있는 것이다.
 
+\clearpage
+
+
+\noindent  
+Question 2에서 주어진 테이블을 완성하면 Table 1과 같다. 
+
 \begin{figure}[!ht]
-  \centering
+\centering
   \includegraphics[width=0.6\textwidth]{Bisection_method1.pdf}
   \caption{$f_1(x)$ Graph}
 \end{figure}
-\clearpage
+
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+\begin{table}[]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{ccccc}
+\hline
+\multicolumn{1}{|c|}{}         & \multicolumn{2}{c|}{Bisection Method}                                        & \multicolumn{2}{c|}{Muller's Position}                                                              \\ \hline
+\multicolumn{1}{|c|}{Function} & \multicolumn{1}{c|}{Num. Iters.} & \multicolumn{1}{c|}{Approx. Root}         & \multicolumn{1}{c|}{Num. Iters.} & \multicolumn{1}{c|}{Approx. Root}                                \\ \hline
+\multicolumn{1}{|c|}{$f_1(x)$} & \multicolumn{1}{c|}{22}          & \multicolumn{1}{c|}{-1.934563398361206}   & \multicolumn{1}{c|}{5}           & \multicolumn{1}{c|}{0.816463380929969-1.563584661700659j}        \\ \hline
+\multicolumn{1}{|c|}{$f_2(x)$} & \multicolumn{1}{c|}{22}          & \multicolumn{1}{c|}{2.384185791015625e-7} & \multicolumn{1}{c|}{14}          & \multicolumn{1}{c|}{-0.006364773235289123-0.007825774561814524j} \\ \hline
+\multicolumn{1}{|c|}{$f_3(x)$} & \multicolumn{1}{c|}{22}          & \multicolumn{1}{c|}{0.25753092765808105}  & \multicolumn{1}{c|}{4}           & \multicolumn{1}{c|}{0.257530285446518+0j}                        \\ \hline
+\multicolumn{1}{|c|}{}         & \multicolumn{2}{c|}{Newton's Method}                                         & \multicolumn{2}{c|}{Secant Method}                                                                  \\ \hline
+\multicolumn{1}{|c|}{Function} & \multicolumn{1}{c|}{Num. Iters.} & \multicolumn{1}{c|}{Approx. Root}         & \multicolumn{1}{c|}{Num. Iters.} & \multicolumn{1}{c|}{Approx. Root}                                \\ \hline
+\multicolumn{1}{|c|}{$f_1(x)$} & \multicolumn{1}{c|}{6}           & \multicolumn{1}{c|}{-1.9345632107520243}  & \multicolumn{1}{c|}{7}           & \multicolumn{1}{c|}{-1.9345632107520243}                         \\ \hline
+\multicolumn{1}{|c|}{$f_2(x)$} & \multicolumn{1}{c|}{500}         & \multicolumn{1}{c|}{118.85559115473107}   & \multicolumn{1}{c|}{45}          & \multicolumn{1}{c|}{2.6043552455913054e-6}                       \\ \hline
+\multicolumn{1}{|c|}{$f_3(x)$} & \multicolumn{1}{c|}{4}           & \multicolumn{1}{c|}{0.25753028543986073}  & \multicolumn{1}{c|}{5}           & \multicolumn{1}{c|}{0.2575302854398608}                          \\ \hline
+\multicolumn{5}{c}{Table 1}                                                                                                                                                                                        
+\end{tabular}%
+}
+\end{table}
+
+
 
 
 
@@ -654,13 +686,13 @@ Output : 5.670689228522684
   \caption{$g_1(x)$ Graph}
 \end{figure}
 
-즉 초기값을 $x_0 = -3$ 으로 둘 경우 -3.976098746225619, $x_0 = 3$은 5.670689228522683, $x_0 = 11$ 은 13.305409517702934 이렇게 예상한대로 값을 추정하게 된다. 이때 초기 값을 파악하여 5.670689228522683 또는 13.305409517702934 를 판단해야 한다. 초기값인 $r = 5$, $\rho = 1$, 그리고 $\sigma = 0.6$ 에서
+즉 초기값을 $x_0 = -3$ 으로 둘 경우 -3.976098746225619, $x_0 = 3$은 5.670689228522683, $x_0 = 11$ 은 13.305409517702934 이렇게 예상한대로 값을 추정할 수 있다. 그러나 h는 음수가 될 수 없으므로, 따라서 초기값을 $x_0 = 3$로 잡으면 5.670689228522683, $x_0 = 11$로 잡으면 13.305409517702934 이다.
+\clearpage
 
 
 
-
-
-
+\section{Discussion}
+\subsection{함수에 대한 이해} 
 
 
 
