@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  9 JAN 2023 01:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  9 JAN 2023 01:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -573,16 +573,14 @@ File: Newton_Method3.pdf Graphic file (type pdf)
 <use Newton_Method3.pdf>
 Package pdftex.def Info: Newton_Method3.pdf  used on input line 685.
 (pdftex.def)             Requested size: 258.36667pt x 193.78404pt.
- [20 <./Newton_Method3.pdf>] [21] [22
-
-]
+ [20 <./Newton_Method3.pdf>] [21]
 (./Homework_Root_Finding_201901132_Minwook_Kang.aux) ) 
 Here is how much of TeX's memory you used:
- 7398 strings out of 476093
- 121714 string characters out of 5791584
+ 7389 strings out of 476093
+ 121555 string characters out of 5791584
  2227793 words of memory out of 5000000
- 27607 multiletter control sequences out of 15000+600000
- 558158 words of font info for 106 fonts, out of 8000000 for 9000
+ 27601 multiletter control sequences out of 15000+600000
+ 556656 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,10n,63p,841b,1751s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/
@@ -602,63 +600,60 @@ al/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2
 st/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2022/texmf-dist/fonts/typ
 e1/public/lm/lmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/
 lm/lmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy9.pf
-b></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb3.
-pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb
-9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummj
-bc2.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanum
-mjbc5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nan
-ummjbc6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/n
-anummjbc7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1
-/nanummjbc8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtyp
-e1/nanummjbd4.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumt
-ype1/nanummjbd5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanu
-mtype1/nanummjmac.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/na
-numtype1/nanummjmad.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/
-nanumtype1/nanummjmae.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/publi
-c/nanumtype1/nanummjmb0.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/pub
-lic/nanumtype1/nanummjmb1.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/p
-ublic/nanumtype1/nanummjmb2.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1
-/public/nanumtype1/nanummjmb3.pfb></usr/local/texlive/2022/texmf-dist/fonts/typ
-e1/public/nanumtype1/nanummjmb4.pfb></usr/local/texlive/2022/texmf-dist/fonts/t
-ype1/public/nanumtype1/nanummjmb5.pfb></usr/local/texlive/2022/texmf-dist/fonts
-/type1/public/nanumtype1/nanummjmb6.pfb></usr/local/texlive/2022/texmf-dist/fon
-ts/type1/public/nanumtype1/nanummjmb7.pfb></usr/local/texlive/2022/texmf-dist/f
-onts/type1/public/nanumtype1/nanummjmb8.pfb></usr/local/texlive/2022/texmf-dist
-/fonts/type1/public/nanumtype1/nanummjmb9.pfb></usr/local/texlive/2022/texmf-di
-st/fonts/type1/public/nanumtype1/nanummjmba.pfb></usr/local/texlive/2022/texmf-
-dist/fonts/type1/public/nanumtype1/nanummjmbb.pfb></usr/local/texlive/2022/texm
-f-dist/fonts/type1/public/nanumtype1/nanummjmbc.pfb></usr/local/texlive/2022/te
-xmf-dist/fonts/type1/public/nanumtype1/nanummjmbd.pfb></usr/local/texlive/2022/
-texmf-dist/fonts/type1/public/nanumtype1/nanummjmbe.pfb></usr/local/texlive/202
-2/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbf.pfb></usr/local/texlive/2
-022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc0.pfb></usr/local/texlive
-/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc1.pfb></usr/local/texli
-ve/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc2.pfb></usr/local/tex
-live/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc3.pfb></usr/local/t
-exlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc4.pfb></usr/local
-/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc5.pfb></usr/loc
-al/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc6.pfb></usr/l
-ocal/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc7.pfb></usr
-/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc8.pfb></u
-sr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc9.pfb><
-/usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcc.pfb
-></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcd.p
-fb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmce
+b></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb9.
+pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc
+6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummj
+bc7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanum
+mjbc8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nan
+ummjbd4.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/n
+anummjbd5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1
+/nanummjmac.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtyp
+e1/nanummjmad.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumt
+ype1/nanummjmae.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanu
+mtype1/nanummjmb0.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/na
+numtype1/nanummjmb1.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/
+nanumtype1/nanummjmb2.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/publi
+c/nanumtype1/nanummjmb3.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/pub
+lic/nanumtype1/nanummjmb4.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/p
+ublic/nanumtype1/nanummjmb5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1
+/public/nanumtype1/nanummjmb6.pfb></usr/local/texlive/2022/texmf-dist/fonts/typ
+e1/public/nanumtype1/nanummjmb7.pfb></usr/local/texlive/2022/texmf-dist/fonts/t
+ype1/public/nanumtype1/nanummjmb8.pfb></usr/local/texlive/2022/texmf-dist/fonts
+/type1/public/nanumtype1/nanummjmb9.pfb></usr/local/texlive/2022/texmf-dist/fon
+ts/type1/public/nanumtype1/nanummjmba.pfb></usr/local/texlive/2022/texmf-dist/f
+onts/type1/public/nanumtype1/nanummjmbb.pfb></usr/local/texlive/2022/texmf-dist
+/fonts/type1/public/nanumtype1/nanummjmbc.pfb></usr/local/texlive/2022/texmf-di
+st/fonts/type1/public/nanumtype1/nanummjmbd.pfb></usr/local/texlive/2022/texmf-
+dist/fonts/type1/public/nanumtype1/nanummjmbe.pfb></usr/local/texlive/2022/texm
+f-dist/fonts/type1/public/nanumtype1/nanummjmbf.pfb></usr/local/texlive/2022/te
+xmf-dist/fonts/type1/public/nanumtype1/nanummjmc0.pfb></usr/local/texlive/2022/
+texmf-dist/fonts/type1/public/nanumtype1/nanummjmc1.pfb></usr/local/texlive/202
+2/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc2.pfb></usr/local/texlive/2
+022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc3.pfb></usr/local/texlive
+/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc4.pfb></usr/local/texli
+ve/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc5.pfb></usr/local/tex
+live/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc6.pfb></usr/local/t
+exlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc7.pfb></usr/local
+/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc8.pfb></usr/loc
+al/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc9.pfb></usr/l
+ocal/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcc.pfb></usr
+/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcd.pfb></u
+sr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmce.pfb><
+/usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcf.pfb
+></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd0.p
+fb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd1
 .pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjm
-cf.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanumm
-jmd0.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanu
-mmjmd1.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/na
-nummjmd2.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/
-nanummjmd3.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype
-1/nanummjmd4.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumty
-pe1/nanummjmd5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanum
-type1/nanummjmd6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nan
-umtype1/nanummjmd7.pfb>
-Output written on Homework_Root_Finding_201901132_Minwook_Kang.pdf (22 pages, 2
-685555 bytes).
+d2.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanumm
+jmd3.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanu
+mmjmd4.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/na
+nummjmd5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/
+nanummjmd6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype
+1/nanummjmd7.pfb>
+Output written on Homework_Root_Finding_201901132_Minwook_Kang.pdf (21 pages, 2
+561423 bytes).
 PDF statistics:
- 615 PDF objects out of 1000 (max. 8388607)
- 317 compressed objects within 4 object streams
+ 597 PDF objects out of 1000 (max. 8388607)
+ 306 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
