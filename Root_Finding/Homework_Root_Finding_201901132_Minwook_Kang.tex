@@ -146,7 +146,7 @@ x_zeros = [bisection_while(lambda x: special.jn(0, x), ab,
 \clearpage
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=0.5\textwidth]{Bessel_Functions.pdf}
+  \includegraphics[width=1\textwidth]{Bessel_Functions.pdf}
   \caption{Bessel Function}
 \end{figure}
 
@@ -162,7 +162,7 @@ x_zeros = [bisection_while(lambda x: special.jn(0, x), ab,
 
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=0.5\textwidth]{Zeros_of_Bessel_Fuctions_Homework1.pdf}
+  \includegraphics[width=1\textwidth]{Zeros_of_Bessel_Fuctions_Homework1.pdf}
   \caption{Bessel Function's Zero points}
 \end{figure}
 \clearpage
@@ -197,32 +197,9 @@ f_3(x) = e^{x} - x^2 + 3x - 2
 \noindent
 그리고 Bisection Method 의 코드를 잠시 보여주면 다음과 같은데, 이 함수를 그대로 이용하되, 우리는 return에서 iteration값을 알아야 하기에, 두가지 값을 볼 수 있도록 return값을 $i$ 와 $x_{mid}$의 튜플로 나타내었다.
 
-\begin{lstlisting}[language=Python]
-def bisection_while(f, xinit, predicate):
-    a_n, b_n = xinit
-    f_1st = f(a_n)
-
-    if f(a_n) * f(b_n) >= 0:
-        print("Bisection method fails.")
-        return None
-
-    i = 1
-    x_mid = 0.5 * (a_n + b_n)
-    f_mid = f(x_mid)
-    while predicate(i, (x_mid, f_mid), 0.5 * abs(a_n - b_n)):
-        if f_1st * f_mid > 0:
-            a_n = x_mid
-            f_1st = f_mid
-        else:
-            b_n = x_mid
-
-        i = i + 1
-        x_mid = 0.5 * (a_n + b_n)
-        f_mid = f(x_mid)
-        
-
-    return i, x_mid
-\end{lstlisting}
+\vspace{5mm}
+\lstinputlisting[language=Python, firstline=19, lastline=42]{Root_Finding_by_Coding_Homework1.py}
+\vspace{5mm}
 
 \noindent
 알려진 코드에서 $f_1$, $f_2$, $f_3$ 각각에 해당하는 $x$에 대한 함수로 나타내고, 이때 주어진 조건에 맞게 parameter을 정할 것이다. 우선 첫번째, Bisection Method에서는 interval 을 $(-2, 1)$ 로 두고, 절대 오차로부터 $10^{-6}$ 정도의 차이가 날 수 있도록 조정하기 위하여, lambda 함수의 절댓값 오차를 수정한다. 즉, 원하는 값을 수정하여 값을 추산하고 우리가 원하는 iteration 값과 approx solution 값을 추산하면 다음과 같다.
@@ -511,7 +488,7 @@ Output : iteration: 25, approx solution: -2.9802322387695312e-08
 
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=0.7\textwidth]{f_2(x).pdf}
+  \includegraphics[width=1\textwidth]{f_2(x).pdf}
   \caption{$f_2(x)$ Graph}
 \end{figure}
 
@@ -533,42 +510,17 @@ Output : iteration: 25, approx solution: -2.9802322387695312e-08
 아까 위에서 진동하는 함수의 경우 접선의 기울기가 무한대에 수렴할 경우, iteration이 끊임없이 증가하게 되면서 함수가 무한 반복되는 경우를 볼 수 있었다. 그리고 이를, iteration의 한계를 걸어줌으로써 문제를 차단했지만, 그럼에도 해가 갑자기 늘어나는 경우가 발생했다. 사실 이는, Newton's Method의 단점 중 하나이다. 진동하는 해의 경우 해가 잘못 도출될 수 있는 것인데, 이를 확인하기 위하여 아래의 그래프를 보면,
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=0.7\textwidth]{Newtown_Method_strange.pdf}
+  \includegraphics[width=1\textwidth]{Newtown_Method_strange.pdf}
   \caption{Newton Method Graph and  $X_{zeors}$}
 \end{figure}
 
+\vspace{5mm}
+\lstinputlisting[language=Python, firstline=355, lastline=384]{Root_Finding_by_Coding_Homework1.py}
+\vspace{5mm}
 
-\begin{lstlisting}[language=Python]
-intervals = np.linspace(-20, 20, 10)
-
-x_zeros = []
-def f(x):
-    return x * (1 - np.cos(x))
-
-def fprime(x):
-    return 1 - (np.cos(x) + x * np.sin(x))
-
-
-for ab in zip(intervals[:-1], intervals[1:]):
-    sol = optimize.root_scalar(f, fprime = fprime , bracket=ab, method='newton', x0 =ab[1])
-    x_zeros.append(sol.root)
-
-x = np.linspace(-2000, 2000, 100)
-y = x * (1 - np.cos(x))
-
-plt.figure()
-plt.plot(x, y, '-r')
-plt.plot(x_zeros, np.zeros_like(x_zeros), 'ok',
-         label="points")
-plt.xlabel("$f_2(x)$")
-plt.ylabel("$function$")
-plt.grid()
-plt.legend()
-plt.savefig("Newtown_Method_strange.pdf")
-\end{lstlisting}
 
 \noindent  
-Figure 6의 검은색 point는 Newton's Method를 optimize로 계산한 해를 구한 것이다. 여기서도 볼 수 있듯이,  해가 갑자기 뜬 경우를 볼 수 있고, 이것이 Newton's Method의 단점 중 하나라고 볼 수 있다. 즉 이는 초기값에 따라서 값이 달라질 수 있다는 것이고, $f'(x)$ 이 0 에 한없이 가까워 질수록 무한히 반복할 수 있다.
+Figure 6의 검은색 point는 Newton's Method를 optimize로 계산한 해를 구한 것이다. 여기서도 볼 수 있듯이,  해가 갑자기 뜬 경우를 볼 수 있고, 이것이 Newton's Method의 단점 중 하나라고 볼 수 있다. 이는 초기값에 따라서 값이 달라질 수 있다는 것이고, 만약 도함수 $f'(x)$ 이 0 에 한없이 가까워 질수록 무한히 반복할 수 있다.
 \clearpage
 
 
@@ -609,8 +561,7 @@ Question 2에서 주어진 테이블을 완성하면 Table 1과 같다.
   \caption{$f_1(x)$ Graph}
 \end{figure}
 
-% Please add the following required packages to your document preamble:
-% \usepackage{graphicx}
+
 \begin{table}[]
 \centering
 \resizebox{\textwidth}{!}{%
@@ -631,7 +582,7 @@ Question 2에서 주어진 테이블을 완성하면 Table 1과 같다.
 }
 \end{table}
 
-
+\clearpage
 
 
 
@@ -682,7 +633,7 @@ Output : 5.670689228522684
 
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=0.55\textwidth]{Newton_Method3.pdf}
+  \includegraphics[width=0.9\textwidth]{Newton_Method4.pdf}
   \caption{$g_1(x)$ Graph}
 \end{figure}
 

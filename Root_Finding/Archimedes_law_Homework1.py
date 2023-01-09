@@ -39,7 +39,8 @@ r = 5
 p = 1
 o = 0.6
 y = (1/3 * np.pi * (3 * r * h**2 - h**3) * p) - (4/3 * np.pi * r**3 * o)
-
+plt.xlabel("$x$")
+plt.ylabel("$g_1(x)$")
 plt.plot(h, y)
 plt.grid(color='0.5')
 plt.show()

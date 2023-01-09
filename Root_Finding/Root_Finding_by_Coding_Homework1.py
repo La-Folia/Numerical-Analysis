@@ -169,16 +169,16 @@ print(f"iteration: {f_1_approx_secant_by[0]}, approx solution: {f_1_approx_secan
 
 f_2_approx_secant_by = secant_by(lambda x: x * (1 - np.cos(x)), 1, 0.9,
                                    45)
-#i 횟수가 많아질 수록 더 정확해 진다.
+
 print(f"iteration: {f_2_approx_secant_by[0]}, approx solution: {f_2_approx_secant_by[1]}")
 
 
 # In[15]:
 
 
-f_2_approx_secant_by = secant_by(lambda x: (np.exp(x) - x**2 + 3 * x - 2), 1, 0.9,
+f_3_approx_secant_by = secant_by(lambda x: (np.exp(x) - x**2 + 3 * x - 2), 1, 0.9,
                                    6)
-print(f"iteration: {f_2_approx_secant_by[0]}, approx solution: {f_2_approx_secant_by[1]}")
+print(f"iteration: {f_3_approx_secant_by[0]}, approx solution: {f_3_approx_secant_by[1]}")
 
 
 # ## Muller's Method
