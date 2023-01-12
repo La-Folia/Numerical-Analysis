@@ -211,23 +211,447 @@ n = 5: I = 2.350402386462826, Abs error = 8.247766913882515e-10
 
 
 
-\section{reduce the error }
+\section{reduce the error 1}
 \subsection{Problem Recognition} 
 
 \begin{equation}
 \int_0^1 \frac{4}{1 + x^2} dx
 \end{equation}
 
-위의 함수에서, N의 값을 임의로 지정하지 않고, 원하는 오차 범위 내에서 적분을 근사적으로 구하려면 어떻게 해야 할까? 우리는 앞서서 Root Finding에서도 똑같이 이용한 방식을 이용할 수 있다. 바로 위에서 구한, 실제값에다가 결과값을 뺸 오차가 우리가 설정한 범위보다 작아질 때 까지 N을 1씩 증가시키면서 반복시키면 된다.
+위의 함수의 실제 근은 $\pi$ 이다. 위의 함수에서 N의 값을 임의로 지정하지 않고, 원하는 오차 범위 내에서 적분을 근사적으로 구하려면 어떻게 해야 할까? 즉, 오차 범위는 $10^{-5}$ 보다 크면 안되고, $F(x) = \frac{4}{1 + x^2} $ 에서 [0, 1] 까지의 적분값을 유추해야 한다. 
+
+\subsection{Development of a solution} 
+우리는 앞서서 Root Finding에서도 똑같이 이용한 방식을 이용할 수 있다. 바로 위에서 구한, 실제 값에 결과값을 뺸 오차가 우리가 설정한 범위보다 작아질 때 까지 N을 1씩 증가시키면서 반복시키면 된다.
+while문을 통하여, current\textunderscore acc 가 우리가 정한 target\textunderscore acc보다 작아질 때 까지 반복시킨다. 또한, N의 범위도 지정해 주어, 작아졌음에도 계속해서 반복되는 것을 막는다. 이를 코드로 구현하면 다음과 같다.
+
+\begin{lstlisting}[language=Python]
+exact_value = np.pi
+target_acc = 10**(-5)
+
+current_acc = 1
+N = 2
+result = 0
+while current_acc > target_acc and N < 20:
+    result = min_fixed_any_range(lambda x: 4/(1 + x*x), 0, 1, n=N)
+    current_acc = abs(exact_value - result)
+    N += 1
+    
+print(f"approximate value = {result}, number of sample points = {N}")
+print(f"Abs error = {exact_value - result}")
+\end{lstlisting}
+
+\subsection{Execution and Assessment} 
+
+\begin{lstlisting}[language=Python]
+approximate value = 3.141592639884753, number of sample points = 6
+Abs error = 1.3705040213807251e-08
+\end{lstlisting}
+우리가 원하던 결과 값이 구해졌음을 알 수 있다. 우리가 정한 오차 범위인 $10^{-5}$ 보다 Abs error 값이 더 작은 것을 볼 수 있고, N의 횟수 또한 20보다 작은 6번만에 구해졌음을 볼 수 있다. 마찬가지로 다른 문제에도 이를 적용해보자.
+
+
+
+
+
+
+
+
+
+
+
+
+\section{reduce the error 2}
+\subsection{Problem Recognition} 
+
+\begin{equation}
+\int_1^2 \frac{1}{x} dx
+\end{equation}
+이 식에서 오차는 $10^{-7}$ 보다 작으며, $N < 100$ 을 만족하는 적분 값을 구해보자.$ F(x)= \frac{1}{x}  $ 를 [1, 2] 에서 적분하게 되면 정확히 $1$ 이 나온다.
+
+\subsection{Development of a solution} 
+위와 동일한 방법으로, 적분 범위와 오차만 바꾸어 준다. 또한, $N < 100 $이므로 반복 횟수도 100이하가 되게끔 조정해준다.
+
+\begin{lstlisting}[language=Python]
+exact_value = np.log(2)
+target_acc = 10**(-7)
+
+current_acc = 1
+N = 2
+result = 0
+while current_acc > target_acc and N < 100:
+    result = min_fixed_any_range(lambda x: 1/x, 1, 2, n=N)
+    current_acc = abs(exact_value - result)
+    N += 1
+    
+print(f"approximate value = {result}, number of sample points = {N}")
+print(f"Abs error = {exact_value - result}")
+\end{lstlisting}
+
+\subsection{Execution and Assessment} 
+
+\begin{lstlisting}[language=Python]
+approximate value = 0.6931471578530402, number of sample points = 6
+Abs error = 2.270690513395124e-08
+\end{lstlisting}
+우리가 원하는 방향대로, 적분값을 구했다. 이번에는 Error Function에서 [0.3] 의 범위내에서 추산한 적분의 값이 실제로 Error Function에서 구한 적분의 값과 어느정도 차이가 있는지 확인해 볼 것이다.
+
+
+
+
+
+
+
+
+
+
+
+\section{Error Function}
+\subsection{Problem Recognition} 
+\begin{equation}
+\mathrm{erf}(x) = \frac{2}{\sqrt\pi} \int_0^x e^{-t^2} dt
+\end{equation}
+
+Error Function에서 실제 [0, 3]까지를 값을 구하고, 이것을 선으로 구현하고 빨간색 점으로는 우리가 추산한 Error Function의 값을 찍어서, [0, 3] 까지 오차의 차이나 정도의 변화가 있는지 눈으로 확인할 것이다. 그러기 위해선 우선, Error Function의 실제 값을 알아야 한다. 또한 우리가 이제껏 구했던 방식과 달리, [0, 3]의 범위를 [x, x + i] 처럼 적잘하게 잘라, 잘라낸 작은 사이의 적분값을 구한 후, 이를 원하는 범위 까지 계속해서 더하는 방식으로 적분을 표현할 것이다. 만약, 잘라낸 작은 사이의 적분값만 구한후 (즉, [x, x + i] 사이에서의) 그래프로 나열하게 되면, 원하는 범위 전까지의 [0, x] 까지의 적분 값은 사라지고,  $\frac{2}{\sqrt\pi} \int_x^{x+i} e^{-t^2} dt $ 값만 구해질 것이기 때문에 반드시 구했던 모든 적분 값을 중복해서 더해주는 것을 유의해야 한다.
+
+
+\subsection{Development of a solution} 
+먼저 partition 변수를 지정하여 [0, 3] 까지의 적절한 갯수 31개로 나누어 준다. 그리고 zip 함수를 통해 각각의 (a, b)쌍으로 잘게 범위를 쪼개어, 이때의 적분 값을 구한 것을 partial\textunderscore sum에 저장하여, 이 리스트를 np.cumsum 해줌으로써, 위에서 말한 적분 값을 중복해서 더해줄 것이다. 이를 코드로 구현하면, 
+
+\begin{lstlisting}[language=Python]
+from scipy import special
+
+partition = np.linspace(0, 3, 31)
+partial_sums = [
+    min_fixed_any_range(lambda t: np.exp(-t*t), a, b, n=5)
+    for (a, b) in zip(partition[:-1], partition[1:])
+]
+
+xs = partition
+approx_erf = np.cumsum(partial_sums) * 2/np.sqrt(np.pi)
+approx_erf = np.hstack(([0], approx_erf)) # erf(0) = 0
+
+x_exact = np.linspace(0, 3, 200)
+y_exact = special.erf(x_exact)
+
+plt.figure()
+
+plt.plot(x_exact, y_exact, "-k", label="exact")
+plt.plot(xs, approx_erf, ".:r", lw=1, label="approx")
+plt.legend()
+
+plt.show()
+\end{lstlisting}
+
+
+
+\subsection{Execution and Assessment} 
+$Figure 1$을 보면 우리가 원하는 대로 그래프가 그려졌음을 볼 수 있다. 이때 그래프의 오차를 계산하면 다음과 같다.
+
+\begin{lstlisting}[language=Python]
+0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  6.93889390e-18,
+        0.00000000e+00,  0.00000000e+00,  2.77555756e-17,  4.16333634e-17,
+        2.77555756e-17,  2.77555756e-17,  0.00000000e+00,  2.77555756e-17,
+        0.00000000e+00,  2.77555756e-17,  2.77555756e-17,  5.55111512e-17,
+        1.11022302e-16,  5.55111512e-17,  1.11022302e-16,  5.55111512e-17,
+        0.00000000e+00,  5.55111512e-17,  0.00000000e+00,  0.00000000e+00,
+        5.55111512e-17,  0.00000000e+00,  5.55111512e-17,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  1.11022302e-16,  0.00000000e+00,  1.11022302e-16,
+        0.00000000e+00,  1.11022302e-16,  1.11022302e-16,  1.11022302e-16,
+        1.11022302e-16,  1.11022302e-16,  0.00000000e+00, -1.11022302e-16,
+        \end{lstlisting}
+
+ N= 5로 두고 그림을 그렸지만, 만약 N의 값을 바꾸어 주게 된다면, 예상할 수 있듯이, 오차가 좀 더 벌어짐을 볼 수 있다. 예를 들어, 오차를 더 정확하게 보기 위해, 적분하고자 하는 값을 [0, 3] 에서 [0, 20] 으로 바꾸어 주고, N의 값을 1, 2, 3, 4 로 두고 그림을 각각 그려보면 다음과 같다.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{Error_Funcion.pdf}
+  \caption{$Error Function$ }
+\end{figure}
+\begin{figure}[!ht]
+
+  \centering
+  \includegraphics[width=0.8\textwidth]{Error_Funcion1.pdf}
+  \caption{$Error Function\textunderscore for\textunderscore N = 1, 2, 3, 4$ }
+\end{figure}
+
+이처럼, 우리의 예상대로 N의 값이 커질 수록 더 abs error 값이 줄어들면서 실제 값과 유사하게 적분이 될 수 있음을 볼 수 있다.
+\pagebreak
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Double Integral}
+\subsection{Problem Recognition} 
+\begin{equation}
+I = \int_{1}^{2} \int_{0}^{1} y^x dx dy
+\approx 1.2292741342880657562
+\end{equation}
+
+이번에는 함수 I를 구해야 하는데, $dx$와 $dy$에 대하여 각각의 범위에 대해 적분을 시켜주려고 한다. $Y(x)$ 를 적분하려면, 먼저 $dx$ 에 대하여 적분을 해준 뒤, $y$ 에 대하여 적분을 해주어야 한다.
 
 \subsection{Development of a solution} 
 
+먼저 우리는 x에 대한 식을 y의 변수와 함께 저장하는 함수를 지정해 주어야 한다. 즉, x값이 변하더라도 y값은 변하지 않는 함수를 만들고, 그 함수에서 $x$에 대하여 [0, 1] 의 범위를 적분해 준다. 그리고 다시 $y$에 대해 [1, 2] 범위를 적분해주면서 이차 적분을 풀어줄 수 있다.
+ 
+ 즉, 초기의 $F(x)$는 $x$에 대한 함수로 잡는다. 그리고 $x$에 대하여 적분을 하면 $F(y)$와 같으므로, 이를 다시 $y$에 대하여 적분을 한다. 이를 코드로 구현하면 다음과 같다.
+
+\subsection{Execution and Assessment}
+\begin{lstlisting}[language=Python]
+def inner_sum(y):
+    return min_fixed_any_range(lambda x: y**x, 0, 1, 11)
+    
+outer_sum = min_fixed_any_range(inner_sum, 1, 2, 11)
+
+print("approximatio = {}, absolute error = {}"
+      .format(outer_sum, abs(outer_sum - 1.2292741342880657562)))
+     
+approximatio = 1.229274134361613, absolute error = 7.354716835550335e-11
+        \end{lstlisting}
+실제 값과의 차를 구하면 0에 수렴할 정도로 작은 것을 볼 수 있다.  이것으로 SciPy 모듈의 fixed quad 모듈을 사용하지 않고, 직접 모듈을 만들어서 문제에 적용해 보았다.
+
+\pagebreak
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+\section{Orthogonality of Legendre polynomials}
+\subsection{Problem Recognition} 
+다음 Legendre 다항식의 직교성을 증명하여라.
+\begin{equation}
+\int_{-1}^1 P_m(x) P_n(x) dx = \frac{2}{2n + 1} \delta_{mn}
+    \end{equation}
+
+이 문제는 m 과 n이 임의의 정수일 때, [-1, 1]에서 Legendre 다항식 $P_m(x)$ 과 $P_n(x)$의 곱을 적분하였을 때, $m = n$이면 $\frac{2}{2n + 1}$, 다르면 $0$ 이 되는 것을 통하여, 다항식의 직교성을 증명하라는 문제이다. 이 문제를 풀기 위해서는 먼저, $P_m(x)$ 와  $P_n(x)$ 의 곱을 구하고, 그 값을 [-1, 1]에 대하여 적분을 시켜주면 된다. 이때, m, n은 임의의 정수이기 때문에, 같을 때와 다를 때를 나누어 확인해야 한다. 이는  $\delta_{mn}$ 의 특성을 유의해야 한다.
+
+즉, 두가지 조건을 정리하면 다음과 같다.
+\begin{itemize}
+\item $n = m$ 인 경우,  $\int_{-1}^1 (P_n(x))^2 dx - \frac{2}{2n + 1}  = 0 $ 이 만족되어야 한다.
+\item $n \neq m$인 경우, $\int_{-1}^1 P_m(x) P_n(x) dx = 0 $이 만족되어야 한다.
+\end{itemize}
+
+\subsection{First Condition} 
+먼저 첫번째 조건이 성립하는지를 풀기 위해서, legendre(m) 을 이해하면, $m$에 어떠한 임의의 정수를 넣었을 때, 르장드르 다항식을 나타내는 함수이다. 유의해야 할 것은, legendre() 모듈은 함수를 나타내는 것이다. 따라서, 우리는 $F_m(x) = Legendre(m, x)$로 잡고, 원하는 문제를 풀 수 있다. 르장드르 모듈에서는 따로 x를 인자로 두지 않기 때문에, $F_m(x) = Legendre(m, x)$ 로 나타내지 않고, Legendre(m)으로 나타내면 된다. 이와 관련하여 몇가지 코드를 확인하면,
+\begin{lstlisting}[language=Python]
+import random
+n, m = random.randint(0,10), random.randint(0,10)
+
+def P_m(m): 
+    return min_fixed_any_range(legendre(m), -1, 1, 10)
+print(legendre(m) )
+
+       4             3        2
+4.375 x + 4.857e-16 x - 3.75 x + 2.429e-16 x + 0.375
+        \end{lstlisting}
+이렇게 위에서 언급했던 것 처럼, m에 임의의 정수를 넣으면 르장드르 다항식을 보여주는 함수이다. 이때, 르장드르 다항식은, m에 따라서 짝함수와 홀함수가 결정되는데, 위의 식에서는 $x^3$처럼 홀수 차수 항을 볼 수 있지만 계수는 0이므로 고려하지 않아도 된다. 이제 무작위의 $n$, $m$에 대해서 $n = m$ 이 성립할 때, 위의 조건에 만족하는지 확인할 것이다.
+
+\begin{lstlisting}[language=Python]
+import random
+def P_m_P_M(m,n):
+    return legendre(m) * legendre(n)
+for i in range(10):
+    n = random.randint(0,11)
+    m = n
+    print(f"n = {n}, m = {m}")
+    print((2 / (2 * n + 1)) - min_fixed_any_range(P_m_P_M(m,n), -1, 1, 30))
+    
+n = 4, m = 4
+-8.520961713998076e-15
+n = 9, m = 9
+-4.3921810632951974e-13
+n = 10, m = 10
+-4.626687921671646e-12
+n = 6, m = 6
+-1.6375789613221059e-15
+n = 1, m = 1
+-5.329070518200751e-15
+n = 0, m = 0
+0.0
+n = 6, m = 6
+-1.6375789613221059e-15
+n = 9, m = 9
+-4.3921810632951974e-13
+n = 2, m = 2
+-6.827871601444713e-15
+n = 10, m = 10
+-4.626687921671646e-12
+        \end{lstlisting}
+범위를 [0, 10] 으로 두고 계산하였지만, 만약, 범위가 10이상 커지게 되면 르장드르 다항식의 차수가 많아지게 되면서, 이를 적분하는데 많은 오차가 발생하게 된다. 따라서 이를 막으려면, 적분을 추산하는 함수의 N의 크기가 더욱 커져야 한다. 만약, 범위를 [10, 21] 로 두고, N = 5 인 경우,
+
+\begin{lstlisting}[language=Python]
+n = 14, m = 14
+-6.884520453720455e-10
+n = 21, m = 21
+-0.00011664384684553081
+n = 21, m = 21
+-0.00011664384684553081
+n = 18, m = 18
+-4.849815616859987e-06
+n = 21, m = 21
+-0.00011664384684553081
+n = 17, m = 17
+7.57868260294059e-07
+n = 10, m = 10
+-4.626687921671646e-12
+n = 15, m = 15
+-4.713122087052213e-09
+n = 15, m = 15
+-4.713122087052213e-09
+n = 21, m = 21
+-0.00011664384684553081
+\end{lstlisting}
+
+이처럼, Legendre 다항식의 차수가 21에 가까워 질 수록, 오차 값이 커져버리는 경우가 발생할 수 있다. 따라서 적분 값을 추산할 때, N의 값을 조율하면서 맞추어 줄 수 있다. 정리하면, 우리가 적절하게 정한 오차 범위내에서 $n = m$ 을 가정하여 계산했을 경우, 우리가 초기에 설정한 첫번째 조건에 성립하는 것을 볼 수 있다. 그러면 두번째 조건이 타당한지를 확인해 볼 것이다.
+
+
+
+\subsection{Second Condition}
+두번째 조건은, $n \neq m$인 경우, $\int_{-1}^1 P_m(x) P_n(x) dx = 0 $이 만족되어야 한다. 이를 확인하기 위해선, 위에서 사용한 방식에서, n 과 m을 다르게 배치하므로써, 문제를 해결할 수 있다.
+
+\begin{lstlisting}[language=Python]
+import random
+
+def P_m_P_M(m,n):
+    return legendre(m) * legendre(n)
+
+for i in range(10):
+    n = random.randint(0,11)
+    m = random.randint(1,12) - 1
+    print(f"n = {n}, m = {m}")
+    print(min_fixed_any_range(P_m_P_M(m,n), -1, 1, 30))
+    
+n = 2, m = 5
+-2.0990154059319366e-16
+n = 5, m = 8
+1.215954420485943e-14
+n = 3, m = 11
+1.8747243341055153e-13
+n = 6, m = 9
+-2.9786936805997755e-14
+n = 8, m = 6
+2.3614790678472275e-14
+n = 6, m = 0
+8.934693263018545e-15
+n = 6, m = 11
+2.1583342751929635e-13
+n = 4, m = 5
+-8.795048023202412e-16
+n = 8, m = 4
+8.455042221910958e-15
+n = 11, m = 5
+1.5622919624647125e-13
+    
+    
+\end{lstlisting}
+이때 우리는 n, m을 서로 다른 정수로 표현하기 위해서 -1 을 취했는데, n과 m은 무작위 정수이므로 $n < m$ 이나 $n > m$ 에 대하여 고려할 필요가 없다. ($n = m,  m = n$을 대입하면 똑같다.) 따라서 이 결과값을 확인하면 모두 0에 수렴하기 때문에, 우리가 초기에 설정한 두번째 조건에도 만족하는 것을 볼 수 있다. 
+
+\subsection{Execution and Assessment}
+초기에 결정한 두가지 조건
+\begin{itemize}
+\item $n = m$ 인 경우,  $\int_{-1}^1 (P_n(x))^2 dx - \frac{2}{2n + 1}  = 0 $ 이 만족되어야 한다.
+\item $n \neq m$인 경우, $\int_{-1}^1 P_m(x) P_n(x) dx = 0 $이 만족되어야 한다.
+\end{itemize}
+가 성립하므로 따라서 우리는
+
+\begin{equation}
+\int_{-1}^1 P_m(x) P_n(x) dx = \frac{2}{2n + 1} \delta_{mn}
+    \end{equation}
+이 성립함을 증명할 수 있고 따라서 두 르장드르 다항식은 직교성을 가진다는 것을 확인할 수 있다.
+
+
+
+
+
+
+
+
+
+\pagebreak
+\section{Orthogonality of Bessel funcions} 
+\subsection{Problem Recognition} 
+ 이번에는 베셀 함수의 직교성을 증명하는 문제이다.
+이제 우리는 Bessel 함수에서 $\alpha$ 와 $\beta$ 에 따른 직교성을 증명해야 한다. 베셀함수의 경우, Scipy의 special.jn 모듈을 통하여 베셀 함수를 나타낼 수 있다. 하지만 유의할 것은, 위의 르장드르 방정식과 달리, x 값을 따로 설정해 주어야 한다. 
+\begin{equation}
+\begin{split}
+    \int_0^1 &J_p(\alpha x) J_p(\beta x) x dx
+    \end{split}   
+    = \frac{1}{2} J_{p + 1}^2(\alpha) = \frac{1}{2} J_{p - 1}^2(\alpha) = \frac{1}{2} (J_p')^2(\alpha)
+   		  , \quad \quad\quad\alpha = \beta
+        \end{equation}
+
+\begin{equation}
+\begin{split}
+    \int_0^1 &J_p(\alpha x) J_p(\beta x) x dx
+    \end{split}   
+    =  0
+   		  , \quad \quad\quad\alpha \neq \beta
+        \end{equation}
+
+유의해야 할 것은 바로, (12) 식에서 볼 수 있는데, $J_p'^2(\alpha)$ 값을 유추해야 한다. 이는 Sympy 의 Derivative() 모듈을 통해 도함수를 구할 수 있으나, 베셀함수의 특징을 생각하면, 어렵지 않게 유추할 수 있다. 바로, 베셀 함수의 반복 관계를 이용하면 된다. 베셀 함수의 반복 관계를 잠시 인용하면,
+
+\begin{equation}
+\begin{array}{c}
+
+\displaystyle
+\frac{d}{dx} (x^p J_p(x))
+=
+x^p J_{p - 1}(x)
+\\
+
+\displaystyle
+\frac{d}{dx} (x^{-p} J_p(x))
+=
+-x^{-p} J_{p + 1}(x)
+\\
+
+\displaystyle
+J_{p - 1}(x) + J_{p + 1}(x)
+=
+\frac{2p}{x} J_p(x)
+\\
+
+\displaystyle
+J_{p - 1}(x) - J_{p + 1}(x)
+=
+2 J_p'(x)
+\\
+
+\displaystyle
+J_p'(x)
+=
+-\frac{p}{x} J_p(x) + J_{p - 1}(x)
+
+\frac{p}{x} J_p(x) - J_{p + 1}(x)
+\end{array}
+        \end{equation}
+        이 관계중에서 우리는 $J_{p - 1}(x) - J_{p + 1}(x)=2 J_p'(x)$ 을 이용하여 베셀 함수의 도함수를 구할 것이다.
+        
+\subsection{Development of a solution} 
+이제, 앞서서 legendre 다항식의 직교성을 구한 것 처럼 두가지의 조건을 성립하는지 확인할 것이다. 조건은 다음과 같다.
+\begin{itemize}
+\item $\alpha= \beta$ 인 경우,   이 만족되어야 한다.
+\item $\alpha \neq \beta$인 경우, 이 만족되어야 한다.
+\end{itemize}
 
 
 

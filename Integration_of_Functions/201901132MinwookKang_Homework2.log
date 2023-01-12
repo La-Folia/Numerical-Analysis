@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.12)  12 JAN 2023 23:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.12)  13 JAN 2023 02:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -491,24 +491,59 @@ File: omslmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <9> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 125.
  [3] [4] [5]
-[6] (./201901132MinwookKang_Homework2.aux) ) 
+LaTeX Font Info:    Trying to load font information for OML+lmr on input line 2
+34.
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omllmr.fd
+File: omllmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OML/lmr/m/n' in size <9> not available
+(Font)              Font shape `OML/lmm/m/it' tried instead on input line 234.
+ [6] [7] [8]
+[9]
+<Error_Funcion.pdf, id=86, 433.62pt x 216.81pt>
+File: Error_Funcion.pdf Graphic file (type pdf)
+<use Error_Funcion.pdf>
+Package pdftex.def Info: Error_Funcion.pdf  used on input line 368.
+(pdftex.def)             Requested size: 375.80542pt x 187.9119pt.
+<Error_Funcion1.pdf, id=87, 462.52798pt x 346.89601pt>
+File: Error_Funcion1.pdf Graphic file (type pdf)
+<use Error_Funcion1.pdf>
+Package pdftex.def Info: Error_Funcion1.pdf  used on input line 374.
+(pdftex.def)             Requested size: 375.80542pt x 281.86818pt.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 375.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 375.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 375.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 375.
+
+[10 <./Error_Funcion.pdf>] [11 <./Error_Funcion1.pdf>] [12] [13] [14] [15]
+[16] [17] [18] (./201901132MinwookKang_Homework2.aux) ) 
 Here is how much of TeX's memory you used:
- 7217 strings out of 476093
- 117945 string characters out of 5791585
+ 7312 strings out of 476093
+ 119417 string characters out of 5791585
  2137793 words of memory out of 5000000
- 27461 multiletter control sequences out of 15000+600000
- 553424 words of font info for 90 fonts, out of 8000000 for 9000
+ 27545 multiletter control sequences out of 15000+600000
+ 555226 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,6n,63p,647b,1704s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist
-/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc
-/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-
-rm.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/u
-sr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}</usr/local/t
-exlive/2022/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/202
-2/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2022/texmf-di
-st/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/t
-ype1/public/lm/lmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public
+ 56i,15n,63p,1053b,1704s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/local/texlive/2022
+/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2022/texmf-dist/f
+onts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/d
+vips/lm/lm-mathsy.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm
+-rm.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}</
+usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/
+texlive/2022/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/20
+22/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2022/texmf-d
+ist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/t
+ype1/public/lm/lmmi9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public
 /lm/lmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr12.p
 fb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/loc
 al/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2
@@ -544,20 +579,25 @@ ve/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc6.pfb></usr/local/tex
 live/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc7.pfb></usr/local/t
 exlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc8.pfb></usr/local
 /texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc9.pfb></usr/loc
-al/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcc.pfb></usr/l
-ocal/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcd.pfb></usr
-/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmce.pfb></u
-sr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcf.pfb><
-/usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd0.pfb
-></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd1.p
-fb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd3
+al/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmca.pfb></usr/l
+ocal/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcc.pfb></usr
+/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcd.pfb></u
+sr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmce.pfb><
+/usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcf.pfb
+></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd0.p
+fb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd1
 .pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjm
-d5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanumm
-jmd6.pfb>
-Output written on 201901132MinwookKang_Homework2.pdf (6 pages, 1926655 bytes).
+d2.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanumm
+jmd3.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanu
+mmjmd4.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/na
+nummjmd5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/
+nanummjmd6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype
+1/nanummjmd7.pfb>
+Output written on 201901132MinwookKang_Homework2.pdf (18 pages, 2223564 bytes).
+
 PDF statistics:
- 277 PDF objects out of 1000 (max. 8388607)
- 168 compressed objects within 2 object streams
+ 390 PDF objects out of 1000 (max. 8388607)
+ 222 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
