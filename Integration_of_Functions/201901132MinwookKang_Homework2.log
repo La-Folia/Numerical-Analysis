@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.12)  12 JAN 2023 22:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.12)  21 JAN 2023 01:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -47,31 +47,29 @@ Package caption Info: Standard document class detected.
 \c@caption@flags=\count193
 \c@continuedfloat=\count194
 )
-./201901132MinwookKang_Homework2.tex:5: Undefined control sequence.
-<recently read> \usepacakge 
-                            
-l.5 \usepacakge
-               {indentfirst} %들여쓰기패키지
-? 
-./201901132MinwookKang_Homework2.tex:5: Emergency stop.
-<recently read> \usepacakge 
-                            
-l.5 \usepacakge
-               {indentfirst} %들여쓰기패키지
-End of file on the terminal!
+(/usr/local/texlive/2022/texmf-dist/tex/latex/cjk-ko/kotex.sty
+Package: kotex 2015/04/19 v1.6 Korean TeX (ko.TeX)
 
- 
-Here is how much of TeX's memory you used:
- 1580 strings out of 476093
- 29274 string characters out of 5791585
- 1848793 words of memory out of 5000000
- 22042 multiletter control sequences out of 15000+600000
- 512587 words of font info for 33 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 53i,0n,63p,290b,39s stack positions out of 10000i,1000n,20000p,200000b,200000s
-./201901132MinwookKang_Homework2.tex:5:  ==> Fatal error occurred, no output PD
-F file produced!
-char U+2018 (decimal 8216)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/kotex-utf/kotex.cfg)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/kotex-utf/kotexutf.sty
+Package: kotexutf 2022/06/22 v3.0.0 typesetting UTF-8 Korean documents
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+)
+(/usr/local/texlive/2022/texmf-dist/tex/plain/kotex-plain/kotexutf-core.tex
+\unih@ngulpoint=\count195
+\dhucs@emph@raise=\dimen149
+)
+Now handling font encoding LUC ...
+... processing UTF-8 mapping file for font encoding LUC
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/kotex-utf/lucenc.dfu
+File: lucenc.dfu 2007/09/05 UTF-8 support for dhucs
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+2018 (decimal 8216)
    defining Unicode char U+2019 (decimal 8217)
    defining Unicode char U+201C (decimal 8220)
    defining Unicode char U+201D (decimal 8221)
@@ -503,11 +501,11 @@ LaTeX Font Info:    Font shape `OML/lmr/m/n' in size <9> not available
 (Font)              Font shape `OML/lmm/m/it' tried instead on input line 234.
  [6] [7] [8]
 [9]
-<Error_Funcion.pdf, id=87, 433.62pt x 216.81pt>
+<Error_Funcion.pdf, id=87, 722.7pt x 216.81pt>
 File: Error_Funcion.pdf Graphic file (type pdf)
 <use Error_Funcion.pdf>
 Package pdftex.def Info: Error_Funcion.pdf  used on input line 368.
-(pdftex.def)             Requested size: 375.80542pt x 187.9119pt.
+(pdftex.def)             Requested size: 375.80542pt x 112.74184pt.
 <Error_Funcion1.pdf, id=88, 462.52798pt x 346.89601pt>
 File: Error_Funcion1.pdf Graphic file (type pdf)
 <use Error_Funcion1.pdf>
@@ -599,10 +597,10 @@ ublic/nanumtype1/nanummjmd4.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1
 /public/nanumtype1/nanummjmd5.pfb></usr/local/texlive/2022/texmf-dist/fonts/typ
 e1/public/nanumtype1/nanummjmd6.pfb></usr/local/texlive/2022/texmf-dist/fonts/t
 ype1/public/nanumtype1/nanummjmd7.pfb>
-Output written on 201901132MinwookKang_Homework2.pdf (26 pages, 2327613 bytes).
+Output written on 201901132MinwookKang_Homework2.pdf (26 pages, 2324867 bytes).
 
 PDF statistics:
- 441 PDF objects out of 1000 (max. 8388607)
+ 437 PDF objects out of 1000 (max. 8388607)
  252 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
