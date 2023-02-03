@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.12)  3 FEB 2023 00:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.12)  3 FEB 2023 11:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -572,16 +572,202 @@ File: Radium.pdf Graphic file (type pdf)
 <use Radium.pdf>
 Package pdftex.def Info: Radium.pdf  used on input line 1109.
 (pdftex.def)             Requested size: 328.82706pt x 164.4112pt.
+<Three.png, id=297, 429.605pt x 208.78pt>
+File: Three.png Graphic file (type png)
+<use Three.png>
+Package pdftex.def Info: Three.png  used on input line 1128.
+(pdftex.def)             Requested size: 328.82706pt x 159.80536pt.
  [27 <./Radium.pdf>]
+./201901132MinwookKang_Homework3.tex:1169: Extra alignment tab has been changed
+ to \cr.
+<recently read> \endtemplate 
+                             
+l.1169 \end{split}
+                  
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+./201901132MinwookKang_Homework3.tex:1169: Extra alignment tab has been changed
+ to \cr.
+<recently read> \endtemplate 
+                             
+l.1169 \end{split}
+                  
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+./201901132MinwookKang_Homework3.tex:1169: Extra alignment tab has been changed
+ to \cr.
+<recently read> \endtemplate 
+                             
+l.1169 \end{split}
+                  
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+./201901132MinwookKang_Homework3.tex:1169: Extra alignment tab has been changed
+ to \cr.
+<recently read> \endtemplate 
+                             
+l.1169 \end{split}
+                  
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+./201901132MinwookKang_Homework3.tex:1169: Extra alignment tab has been changed
+ to \cr.
+<recently read> \endtemplate 
+                             
+l.1169 \end{split}
+                  
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+./201901132MinwookKang_Homework3.tex:1169: Extra alignment tab has been changed
+ to \cr.
+<recently read> \endtemplate 
+                             
+l.1169 \end{split}
+                  
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+./201901132MinwookKang_Homework3.tex:1169: Extra alignment tab has been changed
+ to \cr.
+<recently read> \endtemplate 
+                             
+l.1169 \end{split}
+                  
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+./201901132MinwookKang_Homework3.tex:1169: Extra alignment tab has been changed
+ to \cr.
+<recently read> \endtemplate 
+                             
+l.1169 \end{split}
+                  
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+[28 <./Three.png>] [29] [30]
+<Three1.pdf, id=341, 722.7pt x 722.7pt>
+File: Three1.pdf Graphic file (type pdf)
+<use Three1.pdf>
+Package pdftex.def Info: Three1.pdf  used on input line 1253.
+(pdftex.def)             Requested size: 234.87749pt x 234.87471pt.
+<Three2.pdf, id=342, 722.7pt x 722.7pt>
+File: Three2.pdf Graphic file (type pdf)
+<use Three2.pdf>
+Package pdftex.def Info: Three2.pdf  used on input line 1259.
+(pdftex.def)             Requested size: 234.87749pt x 234.87471pt.
+ [31]
+<Three3.pdf, id=347, 722.7pt x 722.7pt>
+File: Three3.pdf Graphic file (type pdf)
+<use Three3.pdf>
+Package pdftex.def Info: Three3.pdf  used on input line 1267.
+(pdftex.def)             Requested size: 234.87749pt x 234.87471pt.
+<Three4.pdf, id=348, 722.7pt x 722.7pt>
+File: Three4.pdf Graphic file (type pdf)
+<use Three4.pdf>
+Package pdftex.def Info: Three4.pdf  used on input line 1273.
+(pdftex.def)             Requested size: 234.87749pt x 234.87471pt.
+ [32 <./Three1.pdf> <./Three2.pdf>] [33 <./Three3.pdf> <./Three4.pdf>]
+<xandhs.pdf, id=529, 722.7pt x 722.7pt>
+File: xandhs.pdf Graphic file (type pdf)
+<use xandhs.pdf>
+Package pdftex.def Info: xandhs.pdf  used on input line 1287.
+(pdftex.def)             Requested size: 469.75499pt x 469.76045pt.
+ [34 <./xandhs.pdf>]
+<xandhs2.pdf, id=557, 722.7pt x 722.7pt>
+File: xandhs2.pdf Graphic file (type pdf)
+<use xandhs2.pdf>
+Package pdftex.def Info: xandhs2.pdf  used on input line 1295.
+(pdftex.def)             Requested size: 375.80542pt x 375.80615pt.
+<xandhs3.pdf, id=558, 1445.4pt x 1084.05pt>
+File: xandhs3.pdf Graphic file (type pdf)
+<use xandhs3.pdf>
+Package pdftex.def Info: xandhs3.pdf  used on input line 1301.
+(pdftex.def)             Requested size: 375.80542pt x 281.84636pt.
+<xandhs4.pdf, id=559, 722.7pt x 722.7pt>
+File: xandhs4.pdf Graphic file (type pdf)
+<use xandhs4.pdf>
+Package pdftex.def Info: xandhs4.pdf  used on input line 1307.
+(pdftex.def)             Requested size: 375.80542pt x 375.80615pt.
+ [35 <./xandhs2.pdf>] [36 <./xandhs3.pdf>] [37 <./xandhs4.pdf>]
+<xandhs5.pdf, id=652, 722.7pt x 722.7pt>
+File: xandhs5.pdf Graphic file (type pdf)
+<use xandhs5.pdf>
+Package pdftex.def Info: xandhs5.pdf  used on input line 1366.
+(pdftex.def)             Requested size: 375.80542pt x 375.80615pt.
+ [38 <./xandhs5.pdf>] [39]
+<ElectricField.png, id=689, 419.5675pt x 293.095pt>
+File: ElectricField.png Graphic file (type png)
+<use ElectricField.png>
+Package pdftex.def Info: ElectricField.png  used on input line 1405.
+(pdftex.def)             Requested size: 375.80542pt x 262.52634pt.
+ [40 <./ElectricField.png>]
+
+./201901132MinwookKang_Homework3.tex:1443: LaTeX Error: Unicode character ^^H (
+U+0008)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1443 ...mbda}) = \left (  \frac{-2B_{0}}{R^3}^^H
+                                                  sin\lambda  + \frac{B_{0}}...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+[41]
+
+./201901132MinwookKang_Homework3.tex:1466: LaTeX Error: Unicode character ^^H (
+U+0008)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1466 ...thbf e}_\lambda = \frac{-2B_{0}}{R^3}^^H
+                                                  sin\lambda \hat{\mathbf e}...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+[42]
+<Electric.pdf, id=701, 1445.4pt x 1445.4pt>
+File: Electric.pdf Graphic file (type pdf)
+<use Electric.pdf>
+Package pdftex.def Info: Electric.pdf  used on input line 1513.
+(pdftex.def)             Requested size: 375.80542pt x 375.79514pt.
+ [43 <./Electric.pdf>] [44]
+<Electric2.pdf, id=741, 1084.05pt x 1084.05pt>
+File: Electric2.pdf Graphic file (type pdf)
+<use Electric2.pdf>
+Package pdftex.def Info: Electric2.pdf  used on input line 1591.
+(pdftex.def)             Requested size: 375.80542pt x 375.80066pt.
+ [45] [46 <./Electric2.pdf>]
 (./201901132MinwookKang_Homework3.aux) ) 
 Here is how much of TeX's memory you used:
- 7380 strings out of 476093
- 120269 string characters out of 5791585
- 2225793 words of memory out of 5000000
- 27605 multiletter control sequences out of 15000+600000
+ 7528 strings out of 476093
+ 122528 string characters out of 5791585
+ 2251793 words of memory out of 5000000
+ 27739 multiletter control sequences out of 15000+600000
  564339 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,25n,63p,692b,1706s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 56i,27n,63p,1013b,1706s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fon
 ts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvi
 ps/lm/lm-mathsy.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-t
@@ -644,11 +830,11 @@ fonts/type1/public/nanumtype1/nanummjmd4.pfb></usr/local/texlive/2022/texmf-dis
 t/fonts/type1/public/nanumtype1/nanummjmd5.pfb></usr/local/texlive/2022/texmf-d
 ist/fonts/type1/public/nanumtype1/nanummjmd6.pfb></usr/local/texlive/2022/texmf
 -dist/fonts/type1/public/nanumtype1/nanummjmd7.pfb>
-Output written on 201901132MinwookKang_Homework3.pdf (27 pages, 2606923 bytes).
+Output written on 201901132MinwookKang_Homework3.pdf (46 pages, 2981659 bytes).
 
 PDF statistics:
- 574 PDF objects out of 1000 (max. 8388607)
- 298 compressed objects within 3 object streams
+ 1033 PDF objects out of 1200 (max. 8388607)
+ 425 compressed objects within 5 object streams
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 96 words of extra memory for PDF output out of 10000 (max. 10000000)
 
