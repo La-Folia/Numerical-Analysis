@@ -1,3 +1,4 @@
+%:
 \documentclass[11pt]{article}
 
 
@@ -1366,23 +1367,54 @@ plt.show()
   \includegraphics[width=0.8\textwidth]{xandhs5.pdf}
   \caption{gradient and h, [0: 220}
 \end{figure} 
+Stepsize h의 변화를 이해하기 위해서 Adaptive Stepsize Control의 개념을 다시보면, h의 변화는 
 
-이렇게 Stepsize h가 기울기와 연관이 있는 이유는 바로 Runge-Kutta 방법을 적용했을때에 정의한 rel err의 값 때문이다. h가 작으면 rel err이 작아지게 되고 그러면 h는 증가값을 가지면서 다음 Step에서는 rel err은 커지게 된다. 하지만 rel err값이 다시 커지면 h가 작아지게 되면서 서로의 값을 따라가게 되는데, 그 기준으로 영향을 미치는 값은 그 함수의 값이다. 즉, 위에서 본
 \begin{equation}
-\begin{split}
-\begin{aligned}
-k_1 &= h f(x_n, y_n) \\
-k_2 &= h f(x_n + a_2 h, y_n + b_{21} k_1) \\
-k_3 &= h f(x_n + a_3 h, y_n + b_{31} k_1 + b_{32} k_2) \\
-    & \cdots \\
-k_6 &= h f(x_n + a_6 h, y_n + b_{61} k_1 + \cdots + b_{65} k_5) \\
-y_{n + 1} &= y_n + c_1 k_1 + c_2 k_2 + c_3 k_3 + c_4 k_4 + c_5 k_5 + c_6 k_6 + O(h^6)
-\qquad (1)
-\end{aligned}
-\end{split}
+h \rightarrow 0.9\times h\times \min \left(\max \left(\left({\frac{\text{tol}}{2\left|\tau_{n+1}^{(1)}\right|}}\right)^{1/2},0.3\right),2\right)
 \end{equation}
-식에서 쓰인 K1 K2 들의 영향을 받으면서, 생기는 현상인데, function에 해당하는 값이 부호가 변할때나 급증할때, rel err값또한 변화폭이 강해지므로 함수의 변화의 정도에 따라 결정되는 모습을 볼 수 있고 결론적으로는 함수와 비슷한 모양을 따라가는 것을 확인할 수 있다.
+에 의해 조정되는 것을 알 수 있다. 그리고 이것을 구현한 예시코드(embedded rk4 ode)에서 쓰인 코드를 다시 주목하면,
+
+\begin{lstlisting}[language=Python]
+delta = d1*k1 + d2*k2 + d3*k3 + d4*k4 + d5*k5 + d6*k6
+y_tmp = abs(y) + abs(h*k1) 
+desired = abs(abstol) + abs(y_tmp*reltol)
+rel_err = delta / desired
+        
+h = h / max(abs(rel_err)**0.2, 1e-2)    # limit the max stepsize increase
+h = min(max(h, hminmax[0]), hminmax[1]) # finally, clamp stepsize
+\end{lstlisting}
+이는 위에 Adaptive Stepsize Control 에서 소개된 아래의 식을 적용한 부분이다.
+
+\begin{equation}
+\Delta \equiv y_{n + 1} - y_{n + 1}^* = \sum_{i = 1}^{6} \left(c_i - c_i^*\right) k_i
+\end{equation}
+이 부분이 곧, rel err의 delta에 해당하는 부분이고, 이는 분자이다. 그리고 분모 부분은 desired로, 위의 식
+
+\begin{equation}
+h_0 = h_1 \left| \frac{\Delta_0}{\Delta_1} \right|^{0.2}
+\end{equation}
+가 적용된 부분이다. 우리가 주목해야 할 점은 코드 1~3줄에 의해 Stepsize h는 rel err에 의해서 적용되고 rel err은 delta와 desired로 결정된다는 것이다. 또한, 그래프에서 볼 수 있는 급격한 변화는코드 6~8줄에서 h의 최소와 최댓값을 제한했고, stepsize가 갑자기 커지는 것을 막기 위해 max함수로 제한을 걸었기 때문에 발생한 경우라는 것도 알 수 있다. 또한 이것을 수식적으로 이해하기 위해 초기값 h = 0.1을 넣었을때를 고려해보면 쉽게 이해할 수 있는데, reltol과 abstol에 따라 분모가 작아지게 되면서 rel err값이 증가하게 되지만, h는 제한이 있기 때문에 h값의 제한에 다다를 경우 h가 제한 값을 선택하면서 급변하게 되는 현상이다. 이러한 부분은 Figure 14에서 볼 수 있듯이, 0.1에서 0.6로 갈때 부자연스럽게 빠르게 꺾이는 부분에서 확인할 수 있다.
+
+하지만 그외에도 크게 변화하는 부분을 그래프에서 볼 수 있었는데, 바로 이 부분이 도함수 크기가 크게 변화하는 부분이 존재했을 경우이다. 또는 부호가 갑자기 달라지는 경우, Stepsize h와 Gradient 사이의 그래프에서 볼 수 있듯이 급격한 변화를 보이는 것을 볼 수 있다. 이렇게 Stepsize h가 기울기와 연관이 있는 이유는 바로 Runge-Kutta 방법을 적용했을때에 정의한 rel err의 값 때문이다. 이는 아래에서 더 설명할 것이다. 우선 h가 작으면 rel err이 작아지게 되고 그러면 h는 증가값을 가지면서 다음 Step에서는 rel err은 커지게 된다. 하지만 rel err값이 다시 커지면 h가 작아지게 되면서 서로의 값을 따라가게 되는데, 그 기준으로 영향을 미치는 값은 그 함수의 값이다. 왜냐하면, 식에서 쓰인 K1 K2 들의 영향을 받으면서, 생기는 현상인데, function에 해당하는 값이 부호가 변할때나 급증할때, rel err값또한 변화폭이 강해지므로 함수의 변화의 정도에 따라 결정되는 모습을 볼 수 있고 결론적으로는 함수와 비슷한 모양을 따라가는 것을 확인할 수 있다. 
+
 \pagebreak
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1591,7 +1623,7 @@ plt.savefig("Electric2.pdf")
   \includegraphics[width=0.8\textwidth]{Electric2.pdf}
   \caption{Dipole Field Line Tracing Six Line}
 \end{figure} 
-이 그래프는 적절한 초기값을 가지지 못하면, 자기장선이 적합하게 그려지지 않는다. 따라서 반복적으로 우리가 원하는 초기값을 얻기 위해서 함수를 반복시켜야 했고, 
+이 그래프는 적절한 초기값을 가지지 못하면, 자기장선이 적합하게 그려지지 않는다. 따라서 반복적으로 우리가 원하는 초기값을 얻기 위해서 함수를 반복시켜야 했다. 
 
-
+상미분 방정식을 푸는 방식에 초기값을 이용하면, 근사적으로 적은 정보만으로 훌륭한 근사치를 뽑을 수 있지만, 초기값에 따라서 결과값이 크게 변할 수 있는 점을 주목할 수 있다. 또한, 전에 다뤘던 방식과 달리, Stepsize h를 함수의 도함수와의 관계로 엮어, 함수가 급격하게 증가하는 경우 계산처리를 해야할 경우가 매우 커질 수 있지만 그럼에도 불구하고 Stepsize가 우리가 정한 범위 내에서 조정되면서 효율적인 계산을 할 수 있다는 점을 알 수 있었다.
 \end{document}
