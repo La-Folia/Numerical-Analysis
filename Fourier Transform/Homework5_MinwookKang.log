@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.12)  22 FEB 2023 23:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.12)  23 FEB 2023 19:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -368,31 +368,39 @@ File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count295
 \l__pdf_internal_box=\box56
 )
-(./Homework5_MinwookKang.aux)
-\openout1 = `Homework5_MinwookKang.aux'.
+(./Homework5_MinwookKang.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for LUC/nanummj/m/n on input line 75.
-LaTeX Font Info:    Trying to load font information for LUC+nanummj on input li
-ne 75.
+./Homework5_MinwookKang.aux:11: LaTeX Error: Missing \begin{document}.
 
-(/usr/local/texlive/2022/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd
-File: lucnanummj.fd 2013/02/12 v0.1 Nanum Myeongjo font definitions
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11  {2
+        .2}Development of a solution}{9}{}\protected@file@percent }
+? 
+./Homework5_MinwookKang.aux:11: Emergency stop.
+ ...                                              
+                                                  
+l.11  {2
+        .2}Development of a solution}{9}{}\protected@file@percent }
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+ 
+Here is how much of TeX's memory you used:
+ 6479 strings out of 476093
+ 107602 string characters out of 5791585
+ 1848793 words of memory out of 5000000
+ 26808 multiletter control sequences out of 15000+600000
+ 515530 words of font info for 34 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 56i,0n,63p,237b,261s stack positions out of 10000i,1000n,20000p,200000b,200000s
+./Homework5_MinwookKang.aux:11:  ==> Fatal error occurred, no output PDF file p
+roduced!
+tions
 )
-LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    ... okay on input line 74.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: listings package is loaded.
@@ -456,35 +464,35 @@ e
 
 \c@lstlisting=\count302
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 7
-6.
+5.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-76.
+75.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-76.
+75.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 76.
+(Font)              <12> on input line 75.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 76.
+(Font)              <8> on input line 75.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 76.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 76.
+(Font)              <6> on input line 75.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 75.
 
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 76.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 75.
 
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -492,95 +500,159 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 9
-0.
-
-(/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 104.
+(Font)              <10.95> on input line 89.
  [2]
 (/usr/local/texlive/2022/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+29.
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 LaTeX Font Info:    Trying to load font information for OML+lmr on input line 1
-41.
+37.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omllmr.fd
 File: omllmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OML/lmr/m/n' in size <9> not available
-(Font)              Font shape `OML/lmm/m/it' tried instead on input line 141.
+(Font)              Font shape `OML/lmm/m/it' tried instead on input line 137.
  [3]
-<Differntiation_1.pdf, id=63, 794.97pt x 289.08pt>
+<Differntiation_1.pdf, id=62, 794.97pt x 289.08pt>
 File: Differntiation_1.pdf Graphic file (type pdf)
 <use Differntiation_1.pdf>
-Package pdftex.def Info: Differntiation_1.pdf  used on input line 176.
+Package pdftex.def Info: Differntiation_1.pdf  used on input line 172.
 (pdftex.def)             Requested size: 469.75499pt x 170.82478pt.
- [4 <./Differntiation_1.pdf>] [5]
-LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 2
-34.
- (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omslmr.fd
+LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 1
+86.
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <9> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 234.
-
-[6] [7]
-<Differntiation_2.pdf, id=106, 794.97pt x 289.08pt>
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 186.
+ [4 <./Differntiation_1.pdf>]
+<Max_graph.pdf, id=95, 722.7pt x 361.35pt>
+File: Max_graph.pdf Graphic file (type pdf)
+<use Max_graph.pdf>
+Package pdftex.def Info: Max_graph.pdf  used on input line 202.
+(pdftex.def)             Requested size: 469.75499pt x 234.88023pt.
+ [5 <./Max_graph.pdf>]
+<Max_graph_uprime.pdf, id=113, 722.7pt x 361.35pt>
+File: Max_graph_uprime.pdf Graphic file (type pdf)
+<use Max_graph_uprime.pdf>
+Package pdftex.def Info: Max_graph_uprime.pdf  used on input line 223.
+(pdftex.def)             Requested size: 469.75499pt x 234.88023pt.
+ [6 <./Max_graph_uprime.pdf>]
+<Max_graph_u_two_prime.pdf, id=131, 722.7pt x 361.35pt>
+File: Max_graph_u_two_prime.pdf Graphic file (type pdf)
+<use Max_graph_u_two_prime.pdf>
+Package pdftex.def Info: Max_graph_u_two_prime.pdf  used on input line 251.
+(pdftex.def)             Requested size: 469.75499pt x 234.88023pt.
+ [7 <./Max_graph_u_two_prime.pdf>] [8] [9] [10] [11] [12]
+<Differntiation_2.pdf, id=169, 794.97pt x 289.08pt>
 File: Differntiation_2.pdf Graphic file (type pdf)
 <use Differntiation_2.pdf>
-Package pdftex.def Info: Differntiation_2.pdf  used on input line 303.
+Package pdftex.def Info: Differntiation_2.pdf  used on input line 455.
 (pdftex.def)             Requested size: 469.75499pt x 170.82478pt.
-<example_DO.pdf, id=107, 1662.21pt x 578.16pt>
+ [13 <./Differntiation_2.pdf>] [14]
+[15]
+<1d_Wave_Solution.pdf, id=211, 505.89pt x 505.89pt>
+File: 1d_Wave_Solution.pdf Graphic file (type pdf)
+<use 1d_Wave_Solution.pdf>
+Package pdftex.def Info: 1d_Wave_Solution.pdf  used on input line 563.
+(pdftex.def)             Requested size: 375.80542pt x 375.81166pt.
+ [16 <./1d_Wave_Solution.pdf>]
+<1d_Wave_Solution2_u1.pdf, id=244, 505.89pt x 505.89pt>
+File: 1d_Wave_Solution2_u1.pdf Graphic file (type pdf)
+<use 1d_Wave_Solution2_u1.pdf>
+Package pdftex.def Info: 1d_Wave_Solution2_u1.pdf  used on input line 576.
+(pdftex.def)             Requested size: 375.80542pt x 375.81166pt.
+<1d_Wave_Solution2_u2.pdf, id=245, 505.89pt x 505.89pt>
+File: 1d_Wave_Solution2_u2.pdf Graphic file (type pdf)
+<use 1d_Wave_Solution2_u2.pdf>
+Package pdftex.def Info: 1d_Wave_Solution2_u2.pdf  used on input line 587.
+(pdftex.def)             Requested size: 375.80542pt x 375.81166pt.
+ [17 <./1d_Wave_Solution2_u1.pdf>] [18 <./1d_Wave_Solution2_u2.pdf>]
+<1d_Wave_Solution2_combined.pdf, id=312, 505.89pt x 505.89pt>
+File: 1d_Wave_Solution2_combined.pdf Graphic file (type pdf)
+<use 1d_Wave_Solution2_combined.pdf>
+Package pdftex.def Info: 1d_Wave_Solution2_combined.pdf  used on input line 613
+.
+(pdftex.def)             Requested size: 375.80542pt x 375.81166pt.
+ [19 <./1d_Wave_Solution2_combined.pdf>]
+<1d_Wave_Solution2_combined2.pdf, id=344, 505.89pt x 505.89pt>
+File: 1d_Wave_Solution2_combined2.pdf Graphic file (type pdf)
+<use 1d_Wave_Solution2_combined2.pdf>
+Package pdftex.def Info: 1d_Wave_Solution2_combined2.pdf  used on input line 62
+7.
+(pdftex.def)             Requested size: 375.80542pt x 375.81166pt.
+ [20 <./1d_Wave_Solution2_combined2.pdf>] [21] [22] [23] [24]
+<Advection_solution.pdf, id=389, 505.89pt x 505.89pt>
+File: Advection_solution.pdf Graphic file (type pdf)
+<use Advection_solution.pdf>
+Package pdftex.def Info: Advection_solution.pdf  used on input line 803.
+(pdftex.def)             Requested size: 375.80542pt x 375.81166pt.
+ [25 <./Advection_solution.pdf>]
+<maximum_amplitude.pdf, id=424, 462.52798pt x 346.89601pt>
+File: maximum_amplitude.pdf Graphic file (type pdf)
+<use maximum_amplitude.pdf>
+Package pdftex.def Info: maximum_amplitude.pdf  used on input line 816.
+(pdftex.def)             Requested size: 375.80542pt x 281.86818pt.
+
+[26 <./maximum_amplitude.pdf>]
+<example_DO.pdf, id=441, 1662.21pt x 578.16pt>
 File: example_DO.pdf Graphic file (type pdf)
 <use example_DO.pdf>
-Package pdftex.def Info: example_DO.pdf  used on input line 373.
+Package pdftex.def Info: example_DO.pdf  used on input line 836.
 (pdftex.def)             Requested size: 469.75499pt x 163.39226pt.
- [8 <./Differntiation_2.pdf>] [9 <./example_DO.pdf>] [10]
-<B3_to_Cshop5_Figure1.pdf, id=182, 1084.05pt x 505.89pt>
+ [27 <./example_DO.pdf>]
+<B3_to_Cshop5_Figure1.pdf, id=480, 1084.05pt x 505.89pt>
 File: B3_to_Cshop5_Figure1.pdf Graphic file (type pdf)
 <use B3_to_Cshop5_Figure1.pdf>
-Package pdftex.def Info: B3_to_Cshop5_Figure1.pdf  used on input line 424.
+Package pdftex.def Info: B3_to_Cshop5_Figure1.pdf  used on input line 887.
 (pdftex.def)             Requested size: 469.75499pt x 219.21896pt.
- [11 <./B3_to_Cshop5_Figure1.pdf>]
-<FFT_figure.pdf, id=224, 1084.05pt x 578.16pt>
+ [28] [29 <./B3_to_Cshop5_Figure1.pdf>]
+<FFT_figure.pdf, id=525, 1084.05pt x 578.16pt>
 File: FFT_figure.pdf Graphic file (type pdf)
 <use FFT_figure.pdf>
-Package pdftex.def Info: FFT_figure.pdf  used on input line 483.
+Package pdftex.def Info: FFT_figure.pdf  used on input line 946.
 (pdftex.def)             Requested size: 469.75499pt x 250.53596pt.
- [12] [13 <./FFT_figure.pdf>]
-<wave_amp_C4.pdf, id=269, 1445.4pt x 722.7pt>
+ [30] [31 <./FFT_figure.pdf>]
+<wave_amp_C4.pdf, id=570, 1445.4pt x 722.7pt>
 File: wave_amp_C4.pdf Graphic file (type pdf)
 <use wave_amp_C4.pdf>
-Package pdftex.def Info: wave_amp_C4.pdf  used on input line 526.
+Package pdftex.def Info: wave_amp_C4.pdf  used on input line 991.
 (pdftex.def)             Requested size: 469.75499pt x 234.87471pt.
- [14]
-<wave_amp_C4+D4.pdf, id=273, 1445.4pt x 722.7pt>
+ [32]
+<wave_amp_C4+D4.pdf, id=574, 2890.8pt x 722.7pt>
 File: wave_amp_C4+D4.pdf Graphic file (type pdf)
 <use wave_amp_C4+D4.pdf>
-Package pdftex.def Info: wave_amp_C4+D4.pdf  used on input line 550.
-(pdftex.def)             Requested size: 469.75499pt x 234.87471pt.
- [15 <./wave_amp_C4.pdf> <./wave_amp_C4+D4.pdf>]
-<wave_amp_independence.pdf, id=343, 1445.4pt x 722.7pt>
+Package pdftex.def Info: wave_amp_C4+D4.pdf  used on input line 1015.
+(pdftex.def)             Requested size: 469.75499pt x 117.43184pt.
+ [33 <./wave_amp_C4.pdf>]
+<wave_amp_independence.pdf, id=610, 2890.8pt x 722.7pt>
 File: wave_amp_independence.pdf Graphic file (type pdf)
 <use wave_amp_independence.pdf>
-Package pdftex.def Info: wave_amp_independence.pdf  used on input line 583.
-(pdftex.def)             Requested size: 469.75499pt x 234.87471pt.
- [16] [17 <./wave_amp_independence.pdf>]
+Package pdftex.def Info: wave_amp_independence.pdf  used on input line 1048.
+(pdftex.def)             Requested size: 469.75499pt x 117.43184pt.
+
+[34 <./wave_amp_C4+D4.pdf>] [35 <./wave_amp_independence.pdf>] [36]
 (./Homework5_MinwookKang.aux) ) 
 Here is how much of TeX's memory you used:
- 7906 strings out of 476093
- 126941 string characters out of 5791585
+ 8025 strings out of 476093
+ 129704 string characters out of 5791585
  2298793 words of memory out of 5000000
- 28119 multiletter control sequences out of 15000+600000
- 556075 words of font info for 101 fonts, out of 8000000 for 9000
+ 28225 multiletter control sequences out of 15000+600000
+ 556964 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,9n,63p,776b,1824s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dv
-ips/lm/lm-mathsy.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-
-mathit.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/
+ips/lm/lm-ts1.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mat
+hsy.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/
 usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texl
 ive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}</usr/local/texlive/2022/t
 exmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2022/texmf-dist/
@@ -599,46 +671,49 @@ l/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2
 ist/fonts/type1/public/nanumtype1/nanummjmac.pfb></usr/local/texlive/2022/texmf
 -dist/fonts/type1/public/nanumtype1/nanummjmad.pfb></usr/local/texlive/2022/tex
 mf-dist/fonts/type1/public/nanumtype1/nanummjmae.pfb></usr/local/texlive/2022/t
-exmf-dist/fonts/type1/public/nanumtype1/nanummjmb0.pfb></usr/local/texlive/2022
-/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb1.pfb></usr/local/texlive/20
-22/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb2.pfb></usr/local/texlive/
-2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb3.pfb></usr/local/texliv
-e/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb4.pfb></usr/local/texl
-ive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb5.pfb></usr/local/te
-xlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb6.pfb></usr/local/
-texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb7.pfb></usr/loca
-l/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb8.pfb></usr/lo
-cal/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb9.pfb></usr/
-local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmba.pfb></us
-r/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbb.pfb></
-usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbc.pfb>
-</usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbd.pf
-b></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbe.
-pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc
-0.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummj
-mc1.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanum
-mjmc2.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nan
-ummjmc3.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/n
-anummjmc5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1
-/nanummjmc6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtyp
-e1/nanummjmc7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumt
-ype1/nanummjmc8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanu
-mtype1/nanummjmc9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/na
-numtype1/nanummjmcc.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/
-nanumtype1/nanummjmcd.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/publi
-c/nanumtype1/nanummjmce.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/pub
-lic/nanumtype1/nanummjmcf.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/p
-ublic/nanumtype1/nanummjmd0.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1
-/public/nanumtype1/nanummjmd1.pfb></usr/local/texlive/2022/texmf-dist/fonts/typ
-e1/public/nanumtype1/nanummjmd2.pfb></usr/local/texlive/2022/texmf-dist/fonts/t
-ype1/public/nanumtype1/nanummjmd3.pfb></usr/local/texlive/2022/texmf-dist/fonts
-/type1/public/nanumtype1/nanummjmd4.pfb></usr/local/texlive/2022/texmf-dist/fon
-ts/type1/public/nanumtype1/nanummjmd5.pfb></usr/local/texlive/2022/texmf-dist/f
-onts/type1/public/nanumtype1/nanummjmd6.pfb>
-Output written on Homework5_MinwookKang.pdf (17 pages, 2461508 bytes).
+exmf-dist/fonts/type1/public/nanumtype1/nanummjmaf.pfb></usr/local/texlive/2022
+/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb0.pfb></usr/local/texlive/20
+22/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb1.pfb></usr/local/texlive/
+2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb2.pfb></usr/local/texliv
+e/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb3.pfb></usr/local/texl
+ive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb4.pfb></usr/local/te
+xlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb5.pfb></usr/local/
+texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb6.pfb></usr/loca
+l/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb7.pfb></usr/lo
+cal/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb8.pfb></usr/
+local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb9.pfb></us
+r/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmba.pfb></
+usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbb.pfb>
+</usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbc.pf
+b></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbd.
+pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb
+e.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummj
+mc0.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanum
+mjmc1.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nan
+ummjmc2.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/n
+anummjmc3.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1
+/nanummjmc4.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumtyp
+e1/nanummjmc5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanumt
+ype1/nanummjmc6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/nanu
+mtype1/nanummjmc7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/na
+numtype1/nanummjmc8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/
+nanumtype1/nanummjmc9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/publi
+c/nanumtype1/nanummjmca.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/pub
+lic/nanumtype1/nanummjmcc.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/p
+ublic/nanumtype1/nanummjmcd.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1
+/public/nanumtype1/nanummjmce.pfb></usr/local/texlive/2022/texmf-dist/fonts/typ
+e1/public/nanumtype1/nanummjmcf.pfb></usr/local/texlive/2022/texmf-dist/fonts/t
+ype1/public/nanumtype1/nanummjmd0.pfb></usr/local/texlive/2022/texmf-dist/fonts
+/type1/public/nanumtype1/nanummjmd1.pfb></usr/local/texlive/2022/texmf-dist/fon
+ts/type1/public/nanumtype1/nanummjmd2.pfb></usr/local/texlive/2022/texmf-dist/f
+onts/type1/public/nanumtype1/nanummjmd3.pfb></usr/local/texlive/2022/texmf-dist
+/fonts/type1/public/nanumtype1/nanummjmd4.pfb></usr/local/texlive/2022/texmf-di
+st/fonts/type1/public/nanumtype1/nanummjmd5.pfb></usr/local/texlive/2022/texmf-
+dist/fonts/type1/public/nanumtype1/nanummjmd6.pfb>
+Output written on Homework5_MinwookKang.pdf (36 pages, 2690527 bytes).
 PDF statistics:
- 610 PDF objects out of 1000 (max. 8388607)
- 279 compressed objects within 3 object streams
+ 922 PDF objects out of 1000 (max. 8388607)
+ 415 compressed objects within 5 object streams
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
 

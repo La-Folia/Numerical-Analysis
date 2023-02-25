@@ -1,4 +1,3 @@
-%:
 \documentclass[11pt]{article}
 
 
@@ -68,7 +67,7 @@
 \headsep=0.25in
 
 
-\title{Linear Algebra \& Eigensystems Homework 4}
+\title{Fourier Transform Homework 5}
 \author{MinWook Kang}
 \date{\today}
 
@@ -83,28 +82,22 @@
 
 %--Paper--
 
-\section{Fourier Transform}
-\subsection{Introduction} 
-선형 대수학은 모든 수학 분야의 중심이다. 
-\begin{itemize}
-    \item 선, 평면 및 회전과 같은 기본 물체를 정의하는 것을 포함하여 현대 기하학의 기본이다.
-    \item 수학적 분석의 한 분야인 기능 분석은 함수 공간에 선형대수학을 적용하는 것을 볼 수 있다.
-\end{itemize}
-우리가 이번 섹션에 다뤄볼 것은 바로 선형 대수 방정식 세트에서 모르는  미지수를 푸는 것이다.
-
-
-
-
-
-
 
 
 \section{Differentiation of Functions} 
 \subsection{Problem Recognition} 
 $x \in [0, 2\pi)$내의 25개의 포인트를 정하여, FFT를 통해 함수를 미분하는 문제이다. 함수는 다음과 같다.
-\begin{equation}
-\displaystyle u(x) = \max\left\{0, 1 - \frac{|x - \pi|}{2}\right\}
+
+\begin{enumerate}
+    \item \begin{equation} u(x) = \max\left\{0, 1 - \frac{|x - \pi|}{2}\right\}
 \end{equation}
+
+       \item  \begin{equation}
+e^{\sin x}
+\end{equation}
+\end{enumerate}
+
+
 이때, 우리가 FFT를 이용하여 구한 미분값과 exact solution을 비교하고 정확성을 확인하는 문제이다. 
 \subsection{Development of a solution} 
 우선 FFT의 Spectral Differentiation을 이용하려면, 우리가 구할려고 하는 함수가 해당 범위에서 주기성을 이루는지를 확인해야 한다. 각각의 함수에 대해 범위를 지정해주고 그것에 대한 그래프를 먼저 그려보고, 그 그래프가 주기성을 가지면, 아래의 절차를 통해 함수의 미분값을 구할 수 있다.
@@ -115,9 +108,12 @@ u_j = \frac{\Delta k}{2\pi} \sum_{l = 0}^{N - 1} \hat u_l e^{i x_j k_l}
 \end{equation}
 그리고 $v_j$를 $u'(x_j)$로 두면, 위의 식으로부터 우리는 아래를 얻는다.
 \begin{equation}
-u_j = \frac{\Delta k}{2\pi} \sum_{l = 0}^{N - 1} \hat u_l e^{i x_j k_l}
+v_j = \frac{\Delta k}{2\pi} \sum_{l = 0}^{N - 1}
+\underbrace{i k_l \hat u_l}_{\hat v_l}
+e^{i x_j k_l}
+= \frac{\Delta k}{2\pi} \sum_{l = 0}^{N - 1} \hat v_l e^{i x_j k_l}
 \end{equation}
-따라서 1차 미분 값은 $\hat v_l = ik_l\hat u_l$이고 이는 $\hat v_l = ik_l\hat u_l$로,  푸리에 계수  의 역 DFT이다. 마찬가지 방식으로 2차 미분 값을 구하게 되면,
+따라서 1차 미분 값은 $\hat v_l = ik_l\hat u_l$이고 이는 푸리에 계수  의 역 DFT이다. 마찬가지 방식으로 2차 미분 값을 구하게 되면,
 \begin{equation}
 w_j = \frac{\Delta k}{2\pi} \sum_{l = 0}^{N - 1}
 \underbrace{-k_l^2 \hat u_l}_{\hat w_l}
@@ -177,8 +173,164 @@ plt.savefig("Differntiation_1.pdf")
   \caption{Derivatives of $ \max\left\{0, 1 - \frac{|x - \pi|}{2}\right\}$}
 \end{figure}
 
-\pagebreak
+이때 1번 함수의 실제 미분값을 확인하려면 본래 함수를 그려준뒤, 직접 확인할 수 있다. 
+\begin{lstlisting}[language=Python]
+plt.figure(figsize = (10, 5))
+x = np.linspace(0, 2 * np.pi, 100)
+plt. plot(x, [max(0, 1 - (abs(x - np.pi)/ 2)) for x in x], '-r')
+plt.savefig("Max_graph.pdf")
 
+c = [x for x in x if max(0, 1 - (abs(x - np.pi)/ 2)) != 0]
+#u'(x)
+uprime = (max(0, 1 - (abs(np.pi - np.pi)/ 2) - max(0, 1 - (abs(c[0] - np.pi)/ 2))) / (np.pi - c[0]))
+print(f"uprime: {uprime}")
+print(f"uprime = {uprime}, x min = {c[0]}")
+print(f"uprime = {uprime}, x middle = {(c[0] + c[-1]) / 2}")
+print(f"uprime = {-1 * uprime}, x max = {c[-1]}")
+
+
+#Output:
+uprime: 0.5
+uprime = 0.5, x min = 1.1423973285781066
+uprime = 0.5, x middle = 3.1415926535897936
+uprime = -0.5, x max = 5.14078797860148
+
+\end{lstlisting}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=1\textwidth]{Max_graph.pdf}
+  \caption{1st $u(x)$}
+\end{figure}
+이 그래프의 1차 미분 그래프는 $1.1423973285781066 \le x  < 3.1415926535897936$ 까지는 0.5이며 $1.1423973285781066 <  x  \le 3.1415926535897936$ 는 -0.5이고 나머지는 0 인 함수이다. 이를 그래프로 나타내면,
+
+\begin{lstlisting}[language=Python]
+def f(x):
+    if 1.1417689472092518 <= x and x < 3.141592653589793:
+        return 0.5
+    elif  x >= 3.141592653589793 and x < 5.141416359970335:
+        return -0.5
+    else:
+        return 0
+plt.figure(figsize = (10, 5))
+x = np.linspace(0, 2 * np.pi, 10000)
+plt.plot(x, [f(x) for x in x], '-r')
+plt.savefig("Max_graph_uprime.pdf")
+\end{lstlisting}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=1\textwidth]{Max_graph_uprime.pdf}
+  \caption{1st function, u'(x)}
+\end{figure}
+
+u의 이차 미분값은 x = 1.1417689472092518, 3.141592653589793, 5.141416359970335 일때 무한한 값을 가지므로 이를 그래프로 그리면 다음과 같다.
+
+\begin{lstlisting}[language=Python]
+import sys
+def g(x):
+    if x == 1.1417689472092518:
+        return sys.maxsize
+    if x == 3.141592653589793:
+        return -1 * sys.maxsize
+    if x == 5.141416359970335:
+        return sys.maxsize
+    else: 
+        return 0
+plt.figure(figsize = (10, 5))
+x = np.linspace(0, 2 * np.pi, 1000)
+print()
+x = np.append(x, np.array([1.1417689472092518, 3.141592653589793,5.141416359970335]))
+plt. plot(x, [g(x) for x in x], '.r')
+#print(1.1417689472092518 in x)
+plt.savefig("Max_graph_u_two_prime.pdf")
+\end{lstlisting}
+    
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=1\textwidth]{Max_graph_u_two_prime.pdf}
+  \caption{1st function, u"(x)}
+\end{figure}
+
+따라서 오차 값을 계산하면 다음과 같다.
+
+\begin{lstlisting}[language=Python]
+# Compare the exact solutions and vj, uj
+print("-"*70)
+print("1st-order derivatives accuracy")
+print("-"*70)
+error1 = [f(x) for x in xj] - vj.real
+for i, err in enumerate(error1):
+    print(f"if x = {xj[i]:.8f}, u - vj: {err}")
+print("-"*70)
+print("2st-order derivatives accuracy")
+print("-"*70)
+error2 = [g(x) for x in xj] - wj.real
+for i, err in enumerate(error2):
+    print(f"if x = {xj[i]:.8f}, u - wj: {err}")
+    
+#Output:
+----------------------------------------------------------------------
+1st-order derivatives accuracy
+----------------------------------------------------------------------
+if x = 0.00000000, u - vj: 8.066242429609187e-17
+if x = 0.25132741, u - vj: 0.0014631148894537738
+if x = 0.50265482, u - vj: -0.004311303416735122
+if x = 0.75398224, u - vj: 0.013115501880781685
+if x = 1.00530965, u - vj: -0.06158369933473708
+if x = 1.25663706, u - vj: 0.09049064073186014
+if x = 1.50796447, u - vj: -0.024866724181648037
+if x = 1.75929189, u - vj: 0.01017010280031344
+if x = 2.01061930, u - vj: -0.003413769806141609
+if x = 2.26194671, u - vj: -0.0023533647118346712
+if x = 2.51327412, u - vj: 0.0113066175021313
+if x = 2.76460154, u - vj: -0.03450964062384332
+if x = 3.01592895, u - vj: 0.14848380535260197
+if x = 3.26725636, u - vj: -0.14848380535259997
+if x = 3.51858377, u - vj: 0.03450964062384321
+if x = 3.76991118, u - vj: -0.011306617502133132
+if x = 4.02123860, u - vj: 0.0023533647118360035
+if x = 4.27256601, u - vj: 0.003413769806141498
+if x = 4.52389342, u - vj: -0.010170102800313607
+if x = 4.77522083, u - vj: 0.024866724181647926
+if x = 5.02654825, u - vj: -0.0904906407318613
+if x = 5.27787566, u - vj: 0.06158369933473793
+if x = 5.52920307, u - vj: -0.013115501880782787
+if x = 5.78053048, u - vj: 0.004311303416735512
+if x = 6.03185789, u - vj: -0.0014631148894539336
+----------------------------------------------------------------------
+2st-order derivatives accuracy
+----------------------------------------------------------------------
+if x = 0.00000000, u - wj: -0.010268797450089408
+if x = 0.25132741, u - wj: 0.01458431707515821
+if x = 0.50265482, u - wj: -0.03535583584850755
+if x = 0.75398224, u - wj: 0.13026928537371504
+if x = 1.00530965, u - wj: -0.9810809508067928
+if x = 1.25663706, u - wj: -1.2637731565649577
+if x = 1.50796447, u - wj: 0.19731141844112352
+if x = 1.75929189, u - wj: -0.0700932483636727
+if x = 2.01061930, u - wj: 0.04470475641843592
+if x = 2.26194671, u - wj: -0.05181049056075088
+if x = 2.51327412, u - wj: 0.10201809229407806
+if x = 2.76460154, u - wj: -0.3260604370764809
+if x = 3.01592895, u - wj: 2.2444206483437013
+if x = 3.26725636, u - wj: 2.244420648343697
+if x = 3.51858377, u - wj: -0.3260604370764926
+if x = 3.76991118, u - wj: 0.10201809229408236
+if x = 4.02123860, u - wj: -0.0518104905607413
+if x = 4.27256601, u - wj: 0.04470475641842299
+if x = 4.52389342, u - wj: -0.07009324836366318
+if x = 4.77522083, u - wj: 0.19731141844111236
+if x = 5.02654825, u - wj: -1.2637731565649473
+if x = 5.27787566, u - wj: -0.9810809508067968
+if x = 5.52920307, u - wj: 0.13026928537371404
+if x = 5.78053048, u - wj: -0.03535583584850443
+if x = 6.03185789, u - wj: 0.014584317075156346
+    \end{lstlisting}
+    
+    
+
+\pagebreak 
 그리고 2번 함수같은 경우는, $sin(x)$가 지수함수 안에 들어간 형태로 마찬가지로 $u_j$에 대입하게 되면,
 \begin{lstlisting}[language=Python]
 N = 25
@@ -307,7 +459,7 @@ if x = 6.03185789, u - wj: -1.829647544582258e-13
 \subsection{Execution and Assessment}
 실제로 미분한 Exact Solution과 FFT를 이용하여 구한 미분 값의 오차가 매우 작은 것을 볼 수 있다. 이것으로 우리는, 미분이 쉽게 불가능한 함수도, FFT와 Spectrum Differentiaion을 통해 미분값을 찾을 수 있다는 것을 보았다.
 
-
+\pagebreak
 
 
 
@@ -322,18 +474,161 @@ if x = 6.03185789, u - wj: -1.829647544582258e-13
 
 \section{1D Wave Solution}
 \subsection{Problem Recognition} 
-
+\begin{enumerate}
+    \item 1D wave program에서 초기 가우스 펄스가 오른쪽으로 전파하도록 수정한다.
+\begin{equation}
+u(0, x) = -\exp(-200 x^2)
+\end{equation}
+    \item 처음에 다음과 같이 하나의 펄스가 주어지도록 프로그램을 수정한다.
+    \begin{equation}
+u_1(0, x) = -\exp(-200 (x + 0.5)^2)
+\end{equation}
+이는 오른쪽으로 전파되고 다른 하나는 다음과 같이 주어지도록 수정하면
+    \begin{equation}
+u_2(0, x) = \exp(-200 (x - 0.5)^2),
+\end{equation}
+왼쪽으로 전파된다. 두 펄스가 서로 교차할 때 어떤 일이 일어나는지 확인한다.
+\end{enumerate}
 
 \subsection{Development of a solution} 
+이 문제의 경우 주어진 코드에서 $u$에 대해 우리가 원하는 값만큼 수정하면 된다. 따라서 미리 알려진 코드에서,
+
+\begin{lstlisting}[language=Python]
+N = 121 # number of grid points in x
+xlim = [-1, 1] # bound of x
+L  = xlim[1] - xlim[0]
+xj = np.linspace(*xlim, N + 1)[:-1]
+kj = np.hstack([
+    np.arange(0,   N/2),     # k > 0 domain
+    np.arange(-int(N/2), 0), # k < 0 domain
+]) * 2*np.pi/L
+
+dt = 4 / N**2 # stability criterion is a whole different subject...
+tmax = 4      # the maximum time to integrate
+datadump_freq = int(0.01 / dt) # intermediate data dump frequency
+outer_loop_count = int(tmax/dt / datadump_freq)
+
+uj = np.exp(-200 * xj**2)            # u(  0, x)
+uj_old = np.exp(-200 * (xj - dt)**2) # u(-Dt, x)
+
+# time and u data containers
+t_data = [dt] * (1 + outer_loop_count)
+u_data = [uj] * (1 + outer_loop_count)
+
+for i in range(outer_loop_count):
+    t_data[i] *= i * datadump_freq
+    u_data[i]  = uj
+
+    for _ in range(datadump_freq):
+        Uj = fft.fft(uj)
+        Wj = -kj**2 * Uj       # approximation for u_xx
+        wj = fft.ifft(Wj).real # remove the imaginary part, which should all be zeros
+        uj_old, uj = uj, 2*uj - uj_old + dt**2*wj
+
+t_data[-1] *= i * datadump_freq
+u_data[-1]  = uj
+
+#plot
+fig, ax = plt.subplots(figsize=(7, 7), ncols=1)
+
+pos = ax.imshow(u_data, interpolation='none', origin='lower', cmap='viridis',
+           extent=np.hstack(([xj[0], xj[-1]], [t_data[0], t_data[-1]])),
+           aspect='auto')
+fig.colorbar(pos, ax=ax, location='right', anchor=(0, 0.3), shrink=0.7,
+             label="$u(t, x)$")
+ax.set_xlabel("$x$")
+ax.set_ylabel("$t$")
+
+plt.savefig("1d_Wave_Solution.pdf")
+\end{lstlisting}
+에서 공간 영역이 $-1 \le x < 1$일때, 정수 n에 대해 주기적인 $u(t, x) = u(t, x + 2n)$의 초기조건은 다음과 같이 가정하였다.
+\begin{equation}
+u(0, x) = \exp(-200 x^2)
+\end{equation}
+이는 곧 위 코드의 
+\begin{lstlisting}[language=Python]
+uj = np.exp(-200 * xj**2)            # u(  0, x)
+uj_old = np.exp(-200 * (xj - dt)**2) # u(-Dt, x)
+\end{lstlisting}
+이 두 줄을 초기값에 맞게 수정하면 된다. 따라서 우리가 만들 1번의 조건에서의 함수는, 5번식이기 때문에, 다음과 같이 수정될 수 있다.
+\begin{lstlisting}[language=Python]
+uj = -1 * np.exp(-200 * xj**2)            # - u(  0, x)
+uj_old = -1 * np.exp(-200 * (xj - dt)**2) # - u(-Dt, x)
+\end{lstlisting}
+이 부분만 수정하여 위에 있는 예제 코드에 적용해 그래프를 그리게 되면,
 
 
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{1d_Wave_Solution.pdf}
+  \caption{initial 1 Gaussian Pulse}
+\end{figure}
+
+마찬가지로, 2번 문제의 $u_1$의 코드는 다음과 같이 수정된다.
+\begin{lstlisting}[language=Python]
+uj = -1 * np.exp(-200 * (xj + 0.5)**2)            # - u(  0, x)
+uj_old = -1 * np.exp(-200 * ((xj + 0.5) - dt)**2) # - u(-Dt, x)
+\end{lstlisting}
+그래프를 그리게 되면,
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{1d_Wave_Solution2_u1.pdf}
+  \caption{initial 2 Gaussian Pulse $u_1$}
+\end{figure}
+그리고 2번 문제의 $u_2$ 또한 동일하게 진행하면,
+\begin{lstlisting}[language=Python]
+uj = np.exp(-200 * (xj - 0.5)**2)            # - u(  0, x)
+uj_old = np.exp(-200 * ((xj - 0.5) - dt)**2) # - u(-Dt, x)
+\end{lstlisting}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{1d_Wave_Solution2_u2.pdf}
+  \caption{initial 2 Gaussian Pulse $u_2$}
+\end{figure}
+\pagebreak
+
+그리고 두 pulse들을 합치는 코드를 작성하면 다음과 같다.
+\begin{lstlisting}[language=Python]
+
+fig, ax = plt.subplots(figsize=(7, 7), ncols=1)
+
+combined= [i+j for i,j in zip(u_data_u1,u_data_u2)]
+# plot the second solution on top of the first
+pos1 = ax.imshow(combined, interpolation='none', origin='lower', cmap='viridis',
+           extent=np.hstack(([xj[0], xj[-1]], [t_data_u1[0], t_data_u1[-1]])),
+           aspect='auto')
+
+fig.colorbar(pos1, ax=ax, location='right', anchor=(0, 0.3), shrink=0.7,
+             label="$u(t, x)$")
+ax.set_xlabel("$x$")
+ax.set_ylabel("$t$")
+
+plt.savefig("1D_Wave_Solution2_combined.pdf")
+
+\end{lstlisting}
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{1d_Wave_Solution2_combined.pdf}
+  \caption{initial 2 Gaussian Pulse combined.pdf}
+\end{figure}
+\pagebreak
 
 \subsection{Execution and Assessment}
+두 pulse를 합치면, 새로운 pulse가 생성된다. 즉 이는 두 파동이 만나 진폭이 커진 경우로, 보강 간섭이 일어난 것이다. 만약 $u_1$ pulse가 왼쪽으로 $0.5$만큼 움직였을 경우에는 공명 현상이 일어나 파동이 상쇄되는 모습을 볼 수 있다. 예를 들어 $u_1$이 아래와 같이 되고, $u_2$ 데이터는 그대로 유지한채 두 그래프를 합치게 되면,
+\begin{lstlisting}[language=Python]
+uj = -1 * np.exp(-200 * (xj - 0.5)**2)            # - u(  0, x)
+uj_old = -1 * np.exp(-200 * ((xj - 0.5) - dt)**2) # - u(-Dt, x)
+\end{lstlisting}
 
-
-
-
-
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{1d_Wave_Solution2_combined2.pdf}
+  \caption{initial 2 Gaussian Pulse combined resonance.pdf}
+\end{figure}
+이렇게 파동이 서로 영향을 끼치게 되면서 상쇄되는 모습을 볼 수 있다. 이는 곧, 진폭이 작아지거나 없어지는 경우이므로 상쇄 간섭이 일어난 것을 볼 수 있다.
+\pagebreak
 
 
 
@@ -345,21 +640,186 @@ if x = 6.03185789, u - wj: -1.829647544582258e-13
 
 \section{1D Advection Solution}
 \subsection{Problem Recognition} 
-
-
+선행해서 배운 1D advection program에서 아래의 문제를 풀게끔 변경한다. 이때 다른 조건들은 선행해서 배운 조건과 동일하다.
+\begin{equation}
+\frac{\partial u}{\partial t} + c(x) \frac{\partial u}{\partial x} = -\frac{u}{5}
+\end{equation}
+그리고, 각 시간에서 $u$의 최대 진폭을 $t$의 함수로 표시한다. 최대 진폭이 $e^{-t/5}$처럼 감소하는 것을 알 수 있다. 이를 설명한다.
 \subsection{Development of a solution} 
+앞에서 배운 대류 방정식은 $x \in [0, 2\pi]$에서 주기적인 경계 조건을 가진다.
+\begin{equation}
+\frac{\partial u}{\partial t} + c(x) \frac{\partial u}{\partial x} = 0
+,\qquad
+c(x) = \frac{1}{5} + \sin^2(x - 1)
+\end{equation}
+이다. 그리고 초기 조건으로,
+\begin{equation}
+u(0, x) = \exp(-100 (x - 1)^2)
+\end{equation}
+을 가진다. 이때 우리는 DFT를 이용하여 공간을 미분할 것이고, 시간 미분은 leapfrog 공식을 따라 아래를 이용할 것이다.
+\begin{equation}
+u_t \approx \frac{u(t + \Delta t, x) - u(t - \Delta t, x)}{2\Delta t} = w(t, x)
+\end{equation}
+여기서 $w(t, x)$는 $-c(x)u_x$에 대한 추정값이다. 시작값 $u(-\Delta t, x)$을 얻기 위해서, 우리는 $x=1$일때의 파동 속도가 $v = c(1) = 1/5$라고 가정하여 $u(0,x)$에서 거꾸로 추정한다. 아래의 기존의 코드에서,
+
+\begin{lstlisting}[language=Python]
+N = 257 # number of grid points in x
+xlim = [0, 2*np.pi] # bound of x
+L  = xlim[1] - xlim[0]
+xj = np.linspace(*xlim, N + 1)[:-1]
+Dx = xj[1] - xj[0]
+kj = np.hstack([
+    np.arange(0,   N/2),     # k > 0 domain
+    np.arange(-int(N/2), 0), # k < 0 domain
+]) * 2*np.pi/L
+
+dt = Dx / 8   # stability criterion is a whole different subject...
+tmax = 8      # the maximum time to integrate
+datadump_freq = int(0.05 / dt) # intermediate data dump frequency
+outer_loop_count = int(tmax/dt / datadump_freq)
+
+cj = .2 + np.sin(xj - 1)**2
+uj = np.exp(-100 * (xj - 1)**2)             # u(  0, x)
+uj_old = np.exp(-100 * (xj - 1 + .2*dt)**2) # u(-Dt, x)
+
+# time and u data containers
+t_data = [dt] * (1 + outer_loop_count)
+u_data = [uj] * (1 + outer_loop_count)
+
+for i in range(outer_loop_count):
+    t_data[i] *= i * datadump_freq
+    u_data[i]  = uj
+
+    for _ in range(datadump_freq):
+        Uj = fft.fft(uj)
+        Wj = 1j*kj * Uj
+        wj = fft.ifft(Wj).real
+        uj_old, uj = uj, uj_old - 2*dt*cj*wj
+
+t_data[-1] *= i * datadump_freq
+u_data[-1]  = uj
+\end{lstlisting}
+이 코드의 18번째 줄 바로 아래의 식을 수정해야한다. 
+\begin{equation}
+u(-\Delta t, x) = \exp(-100 (x -1 + \frac{1}{5}dt)^2)
+\end{equation}
+이는, 우리가 선행해서 다룬 함수의 경우, $\frac{\partial u}{\partial t} + c(x) \frac{\partial u}{\partial x} = 0$ 이기 때문에, 위의 5번식
+\begin{equation}
+\frac{\partial u}{\partial t} + c(x) \frac{\partial u}{\partial x} = 0
+\end{equation}
+에서  $\frac{\partial u}{\partial t}$를 $u_t = dt$, $ \frac{\partial u}{\partial x}$를 $du$라고 두고, $dt$에 대하여 풀어주게 되면, 
+
+\begin{equation}
+dt + c(1)du  = 0
+,\qquad
+-dt = \frac{1}{5}du
+\end{equation}
+이기 때문에, t가 0일때,  $u(0,x)$에서 거꾸로 $u(-Dt, x)$를 유도해야 한다. 여기서 파동 방정식은 어떤 방정식도 $f(x \pm t)$로 쓰여진 방정식의 해로 쓰일 수 있기 때문에,  왼쪽 방향의 Pulse를 가지는 $u(-Dt, x)$에 대한 식을 적게 되면, 
+\begin{equation}
+u(-\Delta t, x) = \exp(-100 (x -1 + \frac{1}{5}dt)^2)
+\end{equation}
+을 구하게 되는 것이다. 하지만 이 문제의 경우, 10번의 식에서 우변이 0이 아닌 $-\frac{u}{5}$ 이기 때문에, 다시 위와 같이 dt에 대하여 풀어주게 되면
+\begin{equation}
+dt + \frac{1}{5}du  = -\frac{u}{5}
+,\qquad
+-dt = \frac{1}{5}du  + \frac{u}{5}
+\end{equation}
+그리고 이것을 대입시킨다.
+\begin{equation}
+u(-\Delta t, x) = \exp(-100 (x -1 + \frac{1}{5}dt + \frac{1}{5}u)^2)
+\end{equation}
+따라서, 코드를 수정하게 되면
+
+\begin{lstlisting}[language=Python]
+cj = .2 + np.sin(xj - 1)**2
+uj = np.exp(-100 * (xj - 1)**2)              # u(  0, x)
+uj_old = np.exp(-100 * (xj - 1 + .2*dt + .2 * uj)**2) # u(-Dt, x)
+\end{lstlisting}
+
+우리는 이제 각 시간에 따른 $u$의 최대 진폭을 구해야 한다. 이는 함수가 두개의 이중 for 문을 이용하여 각 시간에 따라 구해진 $u$의 리스트에서만 진폭의 최대값을 구하면 되므로, 이를 구현한 코드는 다음과 같다.
+
+\begin{lstlisting}[language=Python]
+N = 257 # number of grid points in x
+xlim = [0, 2*np.pi] # bound of x
+L  = xlim[1] - xlim[0]
+xj = np.linspace(*xlim, N + 1)[:-1]
+Dx = xj[1] - xj[0]
+kj = np.hstack([
+    np.arange(0,   N/2),     # k > 0 domain
+    np.arange(-int(N/2), 0), # k < 0 domain
+]) * 2*np.pi/L
+
+dt = Dx / 8   # stability criterion is a whole different subject...
+tmax = 8      # the maximum time to integrate
+datadump_freq = int(0.05 / dt) # intermediate data dump frequency
+outer_loop_count = int(tmax/dt / datadump_freq)
 
 
 
-\subsection{Execution and Assessment}
+cj = .2 + np.sin(xj - 1)**2
+uj = np.exp(-100 * (xj - 1)**2)              # u(  0, x)
+uj_old = np.exp(-100 * (xj - 1 + .2*dt + .2 * uj)**2) # u(-Dt, x)
+
+# time and u data containers
+t_data = [dt] * (1 + outer_loop_count)
+u_data = [uj] * (1 + outer_loop_count)
+
+max_u = []
+max_t = []
+for i, index in enumerate(range(outer_loop_count)):
+    t_data[i] *= i * datadump_freq
+    u_data[i]  = uj
+    
+
+    max_t.append(t_data[i])
+    max_u.append((abs(max(u_data[i]))- abs(min(u_data[i]))) / 2)
+    
+    for _ in range(datadump_freq):
+        Uj = fft.fft(uj)
+        Wj = 1j*kj * Uj
+        wj = fft.ifft(Wj).real
+        uj_old, uj = uj, uj_old - 2*dt*cj*wj
+
+t_data[-1] *= i * datadump_freq
+u_data[-1]  = uj
+
+fig, ax = plt.subplots(figsize=(7, 7), ncols=1)
+
+
+pos = ax.imshow(u_data, interpolation='none', origin='lower', cmap='viridis',
+           extent=np.hstack(([xj[0], xj[-1]], [t_data[0], t_data[-1]])),
+           aspect='auto')
+fig.colorbar(pos, ax=ax, location='right', anchor=(0, 0.3), shrink=0.7,
+             label="$u(t, x)$")
+ax.set_xlabel("$x$")
+ax.set_ylabel("$t$")
+
+
+plt.savefig("Advection_solution.pdf")
+\end{lstlisting}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{Advection_solution.pdf}
+  \caption{Advection Solution}
+\end{figure}
+
+
+그리고 최대 진폭을 나타낸 그림을 그리면
+\begin{lstlisting}[language=Python]
+plt.plot(max_t, max_u, '-r')
+plt.savefig("maximum_amplitude.pdf")
+\end{lstlisting}
+\pagebreak
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{maximum_amplitude.pdf}
+  \caption{Maximum Amplitude}
+\end{figure}
 
 
 
-
-
-
-
-
+\pagebreak
 
 
 
@@ -427,7 +887,7 @@ plt.savefig("B3_to_Cshop5_Figure1")
   \includegraphics[width=1\textwidth]{B3_to_Cshop5_Figure1.pdf}
   \caption{$B_{3}$ to $C_{\sharp5}$  note and amplitude}
 \end{figure}
-
+\pagebreak
 그리고 이 파형을 소리를 내려면, 우선 위 공식에 맞게 식을 세워주고, 무작위 위상에 대한 샘플을 만들 것이므로, random 함수를 사용하여 표현한다.
 
 \begin{lstlisting}[language=Python]
@@ -486,6 +946,8 @@ plt.savefig("FFT_figure.pdf")
   \includegraphics[width=1\textwidth]{FFT_figure.pdf}
   \caption{$B_{3}$ to $C_{\sharp5}$  note and amplitude}
 \end{figure}
+
+\pagebreak
 우리는 "도"의 음역대를 원하기 때문에,  Filter을 이용하여 도를 제외한 wave amplitude는 제거하고, 역변환 시켜야 한다. 여기까지 코드를 작성하면 다음과 같다.
 \begin{lstlisting}[language=Python]
 Major = ["C4", "D4", "E4","F4", "G4", "A4", "B4", "C5",]
@@ -530,7 +992,7 @@ plt.savefig("wave_amp_C4.pdf")
   \caption{$C_{4}$ amplitude}
 \end{figure}
 
-
+\pagebreak
 
 우리가 구한 도에 대한 wave amplitude를 $t=0$에서 1까지를 보여준 그래프이다. 이때, 위상이 여러개로 보이는 이유는 우리가 0 에서 $2\pi$까지 무작위로 만들어진 위상에 대한 그래프이기 때문에 여러개의 amplitude wave를 볼 수 있게 된다. 여기서 만약, 합의 방식으로 함수를 더하게 되버리면, 소리를 들어보면, 도와 레가 합쳐진 소리가 들리게 되는데, 실제로 그래프를 그려보면,
 
